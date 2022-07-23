@@ -1,0 +1,21 @@
+# Faça um programa que leia algo pelo teclado e mostre na tela o seu tipo primitivo e
+# todas as informações possíveis sobre ele.
+print('=-'*15)
+a = input('Digite algo: ')
+print('O tipo primitivo desse valor é ', type(a))
+print('=-'*15)
+print('EX: 11 - ', 'É númerico ?', a.isnumeric())
+print('EX: 1a - ', 'É alfanúmerico ?', a.isalnum())
+print('EX: aa - ', 'É alfabético ?', a.isalpha())
+print('EX:    - ', 'Tem somente espaços ?', a.isspace())
+print('EX: Bb - ', 'Está capitalizado ?', a.istitle())
+print('EX: BB - ', 'Está em maiúsculas ?', a.isupper())
+print('EX: bb - ', 'Está em minúsculas ?', a.islower())
+#BONUS +
+print('=-'*15)
+print('EX: 1,5 - ', 'É decimal ?', a.isdecimal())
+print('EX: STR - ', 'É imprimível ?', a.isprintable())
+print('EX: U7F - ', 'A string é vazia ou tem caractere ASCII ? EX: (U+0000-U+007F.)', a.isascii())
+print('EX: ABC - ', 'São digitos e tem pelo menos um caractere ?', a.isdigit())
+print('EX: ??? - ', '???', 'a.isidentifier()')
+print('=-'*15)

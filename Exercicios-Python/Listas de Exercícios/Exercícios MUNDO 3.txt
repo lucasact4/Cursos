@@ -1,0 +1,249 @@
+Python 3 - MUNDO 3 | Exercícios
+
+72 - Número por Extenso
+# Crie um programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, de ZERO até VINTE.
+# Seu programa deverá ler um número pelo teclado (ENTRE 0 E 20) e mostrá-lo por extenso.
+
+73 - Tuplas com Times de Futebol
+# Crie uma TUPLA preenchida com os 20 PRIMEIROS colocados da Tabela do
+# CAMPEONATO BRASILEIRO DE FUTEBOL, na ordem de colocação. Depois mostre:
+# A) Apenas os 5 PRIMEIROS colocados.
+# B) Os ÚLTIMOS 4 colocados da tabela.
+# C) Uma lista com os times em ORDEM ALFABÉTICA.
+# D) Em que POSIÇÃO na tabela está o time da Chapecoense.
+
+74 - Maior e menor valores em Tupla
+# Crie um programa que vai gerar CINCO NÚMEROS ALEATÓRIOS e colocar em uma TUPLA.
+# Depois disso, mostre a LISTAGEM DE NÚMEROS gerados e também indique o MENOR e o MAIOR valor que estão na tupla.
+
+75 - Análise de dados em uma Tupla
+# Desenvolva um programa que leia QUATRO VALORES pelo TECLADO e guarde-os em uma TUPLA. No final, mostre:
+# A) Quantas vezes apareceu o valor 9.
+# B) Em que posição foi digitado o primeiro valor 3.
+# C) Quais foram os números PARES.
+
+76 - Lista de Preços com Tupla
+# Crie um programa que tenha uma TUPLA única com NOMES DE PRODUTOS e seus respectivos PREÇOS, na sequência.
+# No final, mostre uma listagem de preços, organizando os dados em forma TABULAR.
+
+77 - Contando vogais em Tupla
+# Crie um programa que tenha uma TUPLA com VÁRIAS PALAVRAS(não usar acentos).
+# Depois disso, você deve mostrar, para cada palavra, quais são as suas VOGAIS.
+
+78 - Maior e Menor valores na Lista
+# Faça um programa que leia 5 VALORES NÚMERICOS e guarde-os em uma LISTA.
+# No final, mostre qual foi o maior e o menor valor digitado e as suas respectivas posições na lista.
+
+79 - Valores únicos em uma Lista
+# Crie um programa onde o usuário possa digitar vários VALORES NÚMERICOS e cadastre-os em uma LISTA.
+# Caso o número já exista lá dentro, ele NÃO SERÁ ADICIONADO.
+# No final, serão exibido todos os VALORES ÚNICOS digitados, em ORDEM CRESCENTE.
+
+80 - Lista ordenada sem repetições
+# Crie um programa onde o usuário possa digitar cinco VALORES NÚMERICOS e cadastre-os em uma LISTA,
+# JÁ NA POSIÇÃO CORRETA de inserção(sem usar o SORT()).
+# No final, mostre a LISTA ORDENADA na tela.
+
+81 - Extraindo dados de uma Lista
+# Crie um programa que vai ler VÁRIOS NÚMEROS e colocar em uma LISTA.
+# Depois disso, mostre:
+# A) QUANTOS números foram digitados.
+# B) A lista de valores, ordenada de forma DECRESCENTE.
+# C) Se o valor 5 foi digitado e está ou não na LISTA.
+
+82 - Dividindo valores em várias listas
+# Crie um programa que vai ler VÁRIOS NÚMEROS e colocar em uma LISTA.
+# Depois disso, crie DUAS LISTAS EXTRAS que vão conter apenas os valores
+# PARES e os valores ÍMPARES digitados, respectivamente.
+# Ao final, mostre o conteúdo das três listas geradas.
+
+83 - Validando expressões matemáticas
+# Crie um programa onde o usuário digite uma EXPRESSÃO qualquer que use PARÊNTESES.
+# Seu aplicativo deverá analisar se a expressão passada está
+# com os parênteses abertos e fechados na ORDEM CORRETA.
+
+84 - Lista composta e análise de dados
+# Faça um programa que leia NOME E PESO de VÁRIAS PESSOAS, guardando tudo em uma LISTA.
+# No final, mostre:
+# A) QUANTAS pessoas foram cadastradas.
+# B) Uma listagem com as pessoas mais PESADAS.
+# C) Uma listagem com as pessoas mais LEVES.
+
+85 - Listas com pares e ímpares
+# Crie um programa onde o usuário possa digitar SETE VALORES NUMÉRICOS
+# e cadastre-os em uma LISTA ÚNICA que mantenha separados os valores PARES e ÍMPARES.
+# No final, mostre os valores pares e ímpares em ordem CRESCENTE.
+
+86 - Matriz em Python
+# Crie um programa que crie uma MATRIZ de DIMENSÃO 3X3 e preencha com valores lidos pelo teclado.
+# ⬜ ⬜ ⬜
+# ⬜ ⬜ ⬜
+# ⬜ ⬜ ⬜
+# No final, mostre a MATRIZ na tela, com a formatação correta.
+
+87 - Mais sobre Matriz em Python
+# Aprimore o DESAFIO ANTERIOR, mostrando no final:
+# A) A SOMA de todos os VALORES PARES digitados.
+# B) A SOMA dos valores da TERCEIRA COLUNA.
+# C) O MAIOR valor da SEGUNDA LINHA.
+
+88 - Palpites para a Mega Sena
+# Faça um programa que ajude um jogador da MEGA SENA a criar PALPITES.
+# O programa vai perguntar QUANTOS JOGOS serão gerados e vai sortear
+# 6 NÚMEROS ENTRE 1 E 60 para cada jogo, cadastrando tudo em uma LISTA COMPOSTA.
+
+89 - Boletim com listas compostas
+# Crie um programa que leia NOME e DUAS NOTAS de vários alunos e guarde tudo em uma LISTA COMPOSTA.
+# No final, mostre um BOLETIM contendo a MÉDIA de cada um e permita
+# que o usuário possa mostrar as NOTAS de cada aluno individualmente.
+
+90 - Dicionário em Python
+# Faça um programa que leia NOME E MÉDIA de um aluno, guardando também a SITUAÇÃO em um DICIONÁRIO.
+# No final, mostre o conteúdo da estrutura na tela.
+
+91 - Jogo de Dados em Python
+# Crie um programa onde 4 JOGADORES joguem um DADO e tenham resultados ALEATÓRIOS.
+# Guarde esses resultados em um dicionário.
+# No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o maior número no dado.
+
+92 - Cadastro de Trabalhador em Python
+# Crie um programa que leia NOME, ANO DE NASCIMENTO e CARTEIRA DE TRABALHO
+# e cadastre-os (com IDADE) em um dicionário se por acaso a CTPS for diferente de ZERO,
+# o dicionário receberá também o ANO DE CONTRATAÇÃO e o SALÁRIO.
+# Calcule e acrescente, além da IDADE, com quantos anos a pessoa vai se APOSENTAR.
+
+93 - Cadastro de Jogador de Futebol
+# Crie um programa que gerencie o aproveitamento de um JOGADOR DE FUTEBOL.
+# O programa vai ler o NOME DO JOGADOR e QUANTAS PARTIDAS ele jogou.
+# Depois vai ler a QUANTIDADE DE GOLS feitos em CADA PARTIDA.
+# No final, tudo isso será guardado em um DICIONÁRIO,
+# incluindo o TOTAL DE GOLS feitos durante o campeonato.
+
+94 - Unindo dicionários e listas
+# Crie um programa que leia NOME, SEXO e IDADE de VÁRIAS PESSOAS,
+# guardando os dados de cada pessoa em um DICIONÁRIO e todos os dicionários em uma LISTA.
+# No final, mostre:
+# A) Quantas pessoas foram cadastradas
+# B) A média de idade do grupo.
+# C) Uma lista com todas as MULHERES.
+# D) Uma lista com todas as pessoas com IDADE acima da MÉDIA.
+
+95 - Aprimorando os Dicionários
+# Aprimore o DESAFIO 093 para que ele funcione com VÁRIOS JOGADORES,
+# incluindo um sistema de visualização de DETALHES DO APROVEITAMENTO de cada jogador.
+
+96 - Função que calcula área
+# Faça um programa que tenha uma FUNÇÃO chamada ÁREA(),
+# que receba as dimensões de um terreno retangular (LARGURA e COMPRIMENTO)
+# e mostre a ÁREA DO TERRENO.
+
+97 - Um print especial
+# Faça um programa que tenha uma FUNÇÃO chamada ESCREVA(),
+# que receba um texto qualquer como PARÂMETRO e mostre
+# uma mensagem com tamanho adaptável.
+# Ex:
+# escreva('Olá, Mundo!')
+# Saída:
+# ~~~~~~~~~~~~~
+#  Olá, Mundo!
+# ~~~~~~~~~~~~~
+
+98 - Função de Contador
+# Faça um programa que tenha uma FUNÇÃO chamada CONTADOR(),
+# que receba três PARÂMETROS: INÍCIO, FIM e PASSO e realize a contagem.
+# Seu programa tem que realizar TRÊS CONTAGENS através da função criada:
+# A) De 1 até 10, de 1 em 1
+# B) De 10 até 0, de 2 em 2
+# C) Uma contagem PERSONALIZADA.
+
+99 - Função que descobre o maior
+# Faça um programa que tenha uma FUNÇÃO chamada MAIOR(),
+# que receba vários PARÂMETROS com valores inteiros.
+# Seu programa tem que analisar todos os valores e dizer qual deles é o MAIOR.
+
+100 - Funções para sortear e somar
+# Faça um programa que tenha uma LISTA chamada NÚMEROS e duas FUNÇÕES chamadas SORTEIA()
+# e SOMAPAR(). A primeira função vai sortear 5 NÚMEROS e vai colocá-los dentro da lista
+# e a segunda função vai mostrar a SOMA entre todos os valores PARES sorteados
+# pela função anterior.
+
+101 - Funções para votação
+# Crie um programa que tenha uma FUNÇÃO chamada VOTO() que vai receber como PARÂMETRO o ANO DE NASCIMENTO
+# de uma pessoa, RETORNANDO um valor LITERAL indicando se uma pessoa tem voto
+# NEGADO, OPCIONAL ou OBRIGATÓRIO nas eleições.
+
+102 - Função para Fatorial
+# Crie um programa que tenha uma FUNÇÃO FATORIAL() que receba dois parâmetros:
+# O primeiro que indique o NÚMERO a calcular e o outro chamado SHOW,
+# que será um valor LÓGICO (OPCIONAL) indicando se será mostrado ou não
+# na tela o processo de cálculo do fatorial.
+
+103 - Ficha do Jogador
+# Faça um programa que tenha uma FUNÇÃO chamada FICHA(), que receba dois PARÂMETROS OPCIONAIS:
+# o NOME de um jogador e quantos GOLS ele marcou.
+# O programa deverá ser capaz de mostrar a FICHA DO JOGADOR, mesmo que
+# algum dado não tenha sido informado corretamente.
+
+104 - Validando entrada de dados em Python
+# Crie um programa que tenha a FUNÇÃO LEIAINT(), que vai funcionar de forma semelhante
+# à função INPUT() do Python, só que fazendo a VALIDAÇÃO para aceitar apenas um valor númerico.
+
+# EX:
+# n = leiaInt('Digite um n')
+
+105 - Analisando e gerando Dicionários
+# Faça um programa que tenha uma FUNÇÃO NOTAS() que pode receber várias
+# notas de alunos e vai retornar um DICIONÁRIO com as seguintes informações:
+# - Quantidade de notas
+# - A maior nota
+# - A menor nota
+# - A média da turma
+# - A situação (opcional)
+# Adicione também as docstrings da função.
+
+106 - Interactive helping system in Python
+# Faça um MINI-SISTEMA que utilize o INTERACTIVE HELP do PYTHON.
+# O usuário vai digitar o COMANDO e o MANUAL vai aparecer.
+# Quando o usuário digitar a palavra 'FIM', o programa se ENCERRARÁ.
+# OBS: use CORES.
+
+107 - Exercitando módulos em Python
+# Crie um módulo chamado moeda1.py que tenha as funções incorporadas AUMENTAR(), DIMINUIR(), DOBRO() e METADE().
+# Faça também um programa que IMPORTE esse módulo e use algumas dessas funções.
+
+108 - Formatando Moedas em Python
+# Adapte o código do DESAFIO 107, criando uma função adicional chamada MOEDA()
+# que consiga mostrar os valores como um valor monetário formatado.
+
+109 - Formatando Moedas em Python
+# Modifique as funções que foram criadas no DESAFIO 107 para que elas aceitem UM PARÂMETRO a mais,
+# informando se o valor retornado por elas vai ser ou não formatado pela função MOEDA(), desenvolvida no DESAFIO 108.
+
+110 - Reduzindo ainda mais seu programa
+# Adicione ao módulo MOEDA.PY criado nos desafios anteriores, uma função chamada RESUMO(),
+# que mostre na tela algumas informações geradas pelas funções que já temos no módulo criado até aqui.
+
+111 - Transformando módulos em pacotes
+# Crie um PACOTE chamado UTILIDADESCEV que tenha dois MÓDULOS INTERNOS chamados MOEDA e DADO.
+# Transfira todas as funções utilizadas nos DESAFIOS 107, 108 e 109
+# para o primeiro pacote e mantenha tudo funcionando.
+
+112 - Entrada de dados monetários
+# Dentro do pacote UTILIZADESCEV que criamos no DESAFIO 111, temos um MÓDULO chamado DADO.
+# Crie uma função chamada LEIADINHEIRO() que seja capaz de funcionar como a função INPUT(),
+# mas com uma VALIDAÇÃO DE DADOS para aceitar apenas valores que sejam MONETÁRIOS.
+
+113 - Funções aprofundadas em Python
+# Reescreva a função LEIAINT() que fizemos no DESAFIO 104, incluindo agora a possibilidade
+# da digitação de um número de tipo inválido.
+# Aproveite e crie também uma função LEIAFLOAT() com a mesma funcionalidade.
+
+114 - Site está acessível?
+# Crie um código em PYTHON que teste se o site PUDIM está acessível pelo computador usado.
+
+115A - 1/3 Criando um menu
+115B - 2/3 Arquivos com Python
+115C - 3/3 Finalizando o projeto
+# Crie um pequeno SISTEMA MODULARIZADO que permita cadastrar
+# pessoas pelo seu NOME e IDADE em um arquivo de texto simples.
+# O sistema só vai ter 2 OPÇÕES: CADASTRAR uma nova pessoa e LISTAR todas as pessoas cadastradas.

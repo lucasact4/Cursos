@@ -1,0 +1,124 @@
+Configuração básica:
+
+-> Abrir o Git Bash no Windows
+
+git config --global user.name "lucasact4"
+-> Configura o nome de usuário.
+
+git config --global user.email "lucasact4@outlook.com"
+-> Configura o email do usuário.
+
+cd 'pasta'
+-> Sem as aspas, entra dentro de uma pasta dentro do diretorio atual.
+
+cd ..
+-> Volta uma pasta atrás.
+
+cd pasta1/pasta2
+-> Avança mais de uma pasta internamente.
+
+clear
+-> Limpa o terminal do git.
+
+git init
+-> Inicia um repositorio no diretorio atual.
+
+git status
+-> Revela o status do repositorio atual.
+
+git add arquivo.formato
+EX: git add readme.txt
+-> Adiciona o arquivo que irá ser redirecionado para o commit(salvamento no repositorio).
+
+git add *.formato
+EX: git add *.txt
+-> Adiciona todos os arquivos do formato escolhido na fila de commit(Stagged Area).
+
+git add .
+-> Salva todas as mudanças de todos os arquivos na fila de commit.
+
+git commit -m "Aqui vai a descrição do commit/mudança"
+-> "Comita" todos os arquivos adicionados na fila para dentro do seu repositorio local.
+
+git commit -a -m "Aqui vai a descrição do commit/mudança"
+-> "Comita" todos os arquivos também, porém pula a etapa de usar o git add para adicionar a fila.
+
+git diff
+-> Revela a mudança feita que nem o git status, porém, com mais detalhes.
+
+git diff --staged
+-> Mesma função do 'git diff', porém revela as mudanças detalhadas dentro da fila de commit adicionada pelo 'git add'.
+
+git log
+-> Mostra todos os commits feitos dentro do repositorio.
+
+git log -p
+-> Mostra todos os commits também, porem, com mais detalhes.
+
+git log -p -1
+-> Mostra o último ou últimos commits feitos, de acordo com a escolha do usuário OBS: com detalhes.
+
+gitk
+-> Abre uma janela de fácil manuseio para se trabalhar observando os commits, substituindo o terminal.
+
+git log --pretty=oneline
+-> Mostra a log de uma forma menos detalhada, limitada ao código do commit e a descrição do commit;
+
+git commit --amend -m "Descrição"
+-> Faz um commit substituindo o commit anterior, sem precisar criar um novo commit, caso o anterior tenha sido comitado errado.
+
+git reset HEAD 'nome'.'formato do arquivo'
+git checkout -- 'nome'.'formato do arquivo'
+git restore --staged <file>...
+-> Sem as aspas, tira as mudanças da Stagged Area, que seria a fila de commits.
+
+git rm <file>...
+-> Remove o arquivo dentro do próprio terminal.
+
+git tag
+-> Lista as tags criadas.
+
+git tag -a 'Aqui vai a versão da TAG'(sem aspas, ex: 'v1.0') -m "Versão 1.0..."
+-> Cria uma tag no repositorio atual e com o commit no estado atual.
+
+git tag -a 'Versão, sem aspas' 'Sem aspas, o codigo do commit que pega na log' -m "Versão 0.0..."
+-> Cria uma tag de acordo com o commit/versão selecionada.
+
+git show 'Nome da versão da tag'
+-> Mostra detalhes da tag selecionada.
+
+git checkout v0.0
+-> Seleciona como um ponteiro no passado, a tag selecionada.
+
+git checkout master
+-> Volta para a branch master do seu repositorio, seja para tags ou branchs.
+
+git tag -d v1.0
+-> Deletada atag selecionada.
+
+git branch 'nome da branch'
+-> Sem as aspas, cria uma branch nova.
+
+git checkout 'branch'
+-> Seleciona a branch escolhida para trabalhar.
+
+git merge 'nome da branch'
+-> Junta a branch escolhida para a branch que está atualmente.
+
+git branch -d 'branch'
+-> Deleta a branch selecionada dentro das aspas(NÃO VAI ASPAS).
+
+git branch
+-> Mostra todas as branchs existentes.
+
+ssh-keygen
+-> Gera uma chave SSH para ser adicionada ao GitHub(Repositorio Remoto)
+
+git clone (LINK SSH do seu repositorio remoto no GitHub)
+-> Clona o seu repositorio remoto para o local, na sua maquina
+
+git push origin 'nome dorepositorio atual'(opcional)
+-> Envia as mudanças(commits) do repositorio local para o remoto
+
+git pull origin 'nome dorepositorio atual'(opcional/sem aspas)
+-> Puxa as mudanças(commits) do repositorio remoto para o local
