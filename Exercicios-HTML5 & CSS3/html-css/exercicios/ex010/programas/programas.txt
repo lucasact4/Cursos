@@ -1,0 +1,49 @@
+============ Programas
+Figma
+Torrent
+Bluestacks
+Brave
+CPU Z
+Discord
+Epic Games
+Format Factory
+Geforce Experience
+Google Chrome
+Redragon K551RGB Keyboard
+Redragon M711
+Riot Client
+Riotoro Aviator
+Rockstar Games Laucher
+Smaters Player Lite
+Speccy
+Steam
+Technic Laucher
+Vegas 18
+After Effects
+PhotoShop
+Pacote Office
+OBS Studio
+AutoCAD
+Wondershare Recoverit
+============ Jogos
+Aim Lab
+Ark
+GTA V
+Fortnite
+League of Legends
+Minecraft
+Valorant
+Transformice
+Free Fire
+============ Programação
+Eclipse IDE
+Netbeans IDE
+Portugol Studio
+PyCharm
+Python
+Java JDK
+Java JRE
+Visual Studio Code
+Git
+GitHub
+Node JS
