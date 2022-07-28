@@ -1,0 +1,148 @@
+Criar automaticamente um documento HTML5 no Visual Studio Code
+-> Digitar html:5 ou ! e dar Enter
+
+Obs:
+1.Sempre pt-br
+2.Mudar o <title>
+3.O CSS <style> vai na parte <head> do HTML
+4.O site vai no <body> 
+5.O JavaScript vai na tag <script> dentro do <body>
+6.Para separar o CSS e o JS, criar arquivos .css ou .js
+
+<h1></h1> h1 até h6
+-> Título e subtítulos
+
+<p></p>
+Parágrafos
+
+<hr> --------------
+-> Cria uma linha separatoria na página toda
+
+Formatação básica: &lt; &gt;
+&lt; é um "<" e &gt; é um ">"
+
+<br> - Quebra de linha
+
+Adicionar simbolos: &nome;
+Ex: &reg; = ®
+
+Adicionar emojis: &#xcodigo do emoji;
+Ex: &#x2764; = ❤
+
+<img> - Adiciona imagens
+Ex: <img src="Local da imagem, seja na web ou localhost" alt="Texto alternativo">
+Obs: Use "../" para voltar uma pasta e conseguir selecionar uma imagem em outra pasata
+
+<link> - Adiciona icone na página | Uso: link:favicon
+Ex: <link rel="shortcut icon" href="Aqui vai o local do icone com extensão .ico" type="image/x-icon">
+
+<addres> - Formato de endereço
+
+<b>Termo em negrito</b> - (semântica)
+<strong>Termo em destaque</strong> - (não semântica)
+
+<i>Termo em itálico</i> - (semântica)
+<em>Termo em ênfase</em> - (não semântica)
+
+<mark style="background-color: lime;">Um texto marcado</mark>
+-> O CSS está sendo usado dentro da tag, mas pode ser usada dentro do CSS
+
+<small>Texto pequeno</small>
+
+<del>Um texto como exclúido</del>
+
+<ins>Um texto como inserido</ins> - (semântica)
+<u>Um texto sublinhado</u> - (não semântica)
+
+<sup>Sobescrito</sup> Assim:ˢ
+<sub>Subescrito</sub> Assim:ₛ
+
+<code> - Texto em código-fonte | Fonte Monoespaçada
+Obs: Pode ser adicionado dentro da tag <pre> para consertar "indentação"
+
+<q> faz uma citação simples com aspas
+Ex: "o computador é um burro muito rápido"
+
+<blockquote cite=""> - faz uma citação completa
+Ex:
+<p>Segundo fulano...</p>
+<blockquote cite="Fonte/URL da citação">
+	A citação.
+</blockquote>
+
+<abbr> - Adiciona uma abreviação/mensagem dentro de um texto ao passar o mouse em cima
+Ex: <abbr title="HyperText Markup Language">HTML</abbr>
+
+<ol> - Lista Ordenada | TAGS INTERIORES: type="1/A/a/I/i" start="Aonde vai iniciar"
+<ul> - Lista não Ordenada | TAGS INTERIORES: type="disc/sircle/square" OBS: O start em não ordenado também se utiliza números
+<li> - Tag que vai dentro da lista para o seu funcionamento
+
+<dl> - Lista de Definição
+<dt> - Item
+<dd> - Definição
+Ex:
+<dl>
+	<dt>HTML</dt>
+	<dd>Linguagem de marcação para a criação do conteúdo de um site.</dd>
+<dl>
+
+<a href=""></a> - Link para download, páginas internas, externas e etc...
+TAGS:
+href="link aqui" -> Link de download ou web
+target="_blank" -> Abre em uma nova guia
+target="_self" -> Abre dentro da mesma guia
+rel="next" -> Proxima página(interna)
+rel="prev" -> Página anterior(interna)
+rel="external" -> Indica que é um link externo
+rel="nofollow" -> Página de terceiros
+download="programas.txt" -> Local de download do arquivo
+type="application/pdf" -> Adicionar o tipo caso dê erro de baixar em algum navegador
+https://www.iana.org/assignments/media-types/media-types.xhtml -> Site para verificar os tipos de assigments de cada arquivo
+
+<source> - Imagens flexiveis para dispositivos variaveis
+media="(max-width: 750px)" -> Tamanho Celular
+media="(max-width: 1050px)" -> Tamanho Tablet
+srcset="imagens/foto-p.png" -> Local da imagem que será trocada
+type="image/png"
+<img src="imagens/foto-g.png" alt="Imagem flexível">
+-> Usar com <img> e dentro da tag <picture>
+Ex:
+<picture>
+	<source media="(max-width: 0px)" srcset="p.png" type="image/png">
+	<img src="g.png" alt="Imagem flexível">
+</picture>
+
+<audio> -> Adiciona algum audio ao site
+src="local do audio.mp3"
+TAGS:
+controls -> Adiciona controles para o audio
+loop -> Repete o audio
+autoplay -> Tocar automaticamente
+<audio preload="metadata"> -> Exemplo para tentar mais de um formato caso dê erro
+	<source src="Local do outro audio" type="Tipo do formato">
+	<p> Paragrafo caso nenhum dê certo de carregar e talvez opção para baixar com a tag <a>
+</audio>
+Types:
+MP3 = audio/mpeg
+OGG = audio/ogg
+WAV = audio/wav -> Evitar, WAV são arquivos pesados
+
+<video src="Local do video" width="Tamanho do video" controls>
+width="560" -> Padrão Computador
+controls, loop, autoplay -> Funcionam
+poster="Local da imagem" -> Adiciona uma imagem de capa do video
+Obs: Mesma função source para testar outros formatos no navegador do audio, funcionam para video também
+Types:
+MP4 = video/mp4
+M4V = video/mp4
+webm = video/webm
+OGV = video/ogg
+-> Videos consomem muita banda e pode ser caro hospedar com a tag VIDEO, hospedado localmente
+<h1>Inserindo vídeos do YouTube</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N3gX58g8tx0" title="YouTube video player"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+OBS: Basta copiar o codigo que o YouTube ou qualquer outro site de videos disponibiliza
+
+Exemplo de como usar CSS dentro do HTML:
+<h1 style="color: mediumblue; background-color: dodgerblue; font-size: 1.5em;">Capítulo 2</h1>

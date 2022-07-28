@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0;
+        }
+        header {
+            background-color: white;
+            border-radius: 5px;
+            border: 3px solid rgb(48, 48, 48);
+            padding: 10px;
+            margin: 5px;
+            box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.384);
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgba(190, 190, 190, 0.678);
+            border-radius: 5px 30px;
+        }
+
+        nav {
+            text-align: center;
+            background-color: rgb(168, 168, 168);
+            font-size: 15px;
+            padding: 3px;
+            padding-bottom: 4px;
+            box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.493);
+        }
+
+        nav > a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+        nav > span {
+            font-weight: 600;
+            color: white;
+        }
+
+        nav > a:hover {
+            text-decoration: underline;
+            background-color: rgba(0, 0, 0, 0.493);
+        }
+
+        main {
+            background-color: white;
+            border-radius: 5px;
+            border: 3px solid rgb(48, 48, 48);
+            padding: 10px;
+            margin: 5px;
+            box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.384);
+        }
+
+        article {
+            background-color: lightgray;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 10px 30px;
+        }
+
+        article > aside {
+            background-color: rgb(168, 168, 168);
+            text-align: center;
+            border-radius: 5px 40px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            border-top: 3px solid darkgrey;
+            border-bottom: 3px solid darkgrey;
+            padding: 10px;
+            margin: 0px;
+
+        }
+
+        footer > p {
+            margin: 0px;
+        }
+
+        div#bola {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <span>|</span> <a href="">Home</a> <span>|</span>
+            <a href="">Loja</a> <span>|</span>
+            <a href="">Cursos</a> <span>|</span>
+            <a href="">Notícias</a> <span>|</span>
+            <a href="">Contato</a> <span>|</span>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+            <p>Esporte, Política, Tecnologia e Entretenimento</p>
+        </section>
+        <section class="esporte">
+            <article>
+                <h2>Esporte</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque, vero consequatur, inventore numquam libero tenetur repudiandae corrupti blanditiis, voluptatum adipisci explicabo exercitationem? Facere aliquid quo impedit, repellendus consequuntur ut!</p>
+                <aside>
+                    <p>Artigo escrito por José da Silva</p>
+                </aside>
+            </article>
+        </section>
+        <section class="politica">
+            <article>
+                <h2>Política</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque, vero consequatur, inventore numquam libero tenetur repudiandae corrupti blanditiis, voluptatum adipisci explicabo exercitationem? Facere aliquid quo impedit, repellendus consequuntur ut!</p>
+                <aside>
+                    <p>Artigo escrito por José da Silva</p>
+                </aside>
+            </article>
+        </section>
+        <section class="tecnologia">
+            <article>
+                <h2>Tecnologia</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque, vero consequatur, inventore numquam libero tenetur repudiandae corrupti blanditiis, voluptatum adipisci explicabo exercitationem? Facere aliquid quo impedit, repellendus consequuntur ut!</p>
+                <aside>
+                    <p>Artigo escrito por José da Silva</p>
+                </aside>
+            </article>
+        </section>
+        <section class="entretenimento">
+            <article>
+                <h2>Entretenimento</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque, vero consequatur, inventore numquam libero tenetur repudiandae corrupti blanditiis, voluptatum adipisci explicabo exercitationem? Facere aliquid quo impedit, repellendus consequuntur ut!</p>
+                <aside>
+                    <p>Artigo escrito por José da Silva</p>
+                </aside>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por @lucasact4</p>
+    </footer>
+    <div id="bola"></div>
+</body>
+</html>

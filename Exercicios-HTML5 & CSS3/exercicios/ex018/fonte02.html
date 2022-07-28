@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'Fonte1';
+            src: url('fonts/Flexi_IBM_VGA_False.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+
+            /*
+                Tipos de format()
+                - opentype (otf)
+                - truetype (ttf)
+                - embedded-opentype
+                - truetype-aat (Apple Advanced Typography)
+                - svg
+            */
+        }
+        @font-face {
+            font-family: 'Fonte2';
+            src: url('fonts/Zector.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Fonte2', Arial, Helvetica, sans-serif;
+            font-weight: 900;
+        }
+
+        h1 {
+            font-family: 'Fonte1', Times, serif;
+            font-size: 3em;
+            font-weight: normal;
+        }
+    </style> <!-- https://www.dafont.com/pt/ -->
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati deleniti dolore aperiam, adipisci ab officiis possimus, totam voluptate, consequuntur eveniet fuga deserunt et dicta quo autem explicabo veniam voluptatem alias!</p>
+</body>
+</html>

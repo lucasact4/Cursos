@@ -1,0 +1,32 @@
+Cores: https://color.adobe.com/pt/create/color-wheel
+Cores: https://paletton.com/
+Pesquisar fontes por imagem:
+https://www.whatfontis.com/
+https://www.fontsquirrel.com/matcherator
+https://www.myfonts.com/pages/whatthefont
+Pesquisar fontes por extensão no Chrome: Fonts Ninja
+
+<link rel="stylesheet" href="style.css">
+-> Linca um arquivo CSS dentro do documento HTML em <head>
+
+background-color: Cor;
+-> Mudar a cor de fundo
+
+font-family: Fonte;
+-> Muda a fonte do texto
+
+font-size: 0px;
+-> Muda o tamanho da fonte
+
+color: Cor;
+-> Muda a cor do item selecionado
+
+text-align: Alinhamento;
+-> Alinha o texto de acordo com sua escolha, centro, esquerda, direita, justificado, etc.
+
+text-decoration: Decoração;
+-> Adiciona uma decoração simples, ex: underline.
+
+mark {
+-> Possivel alteração da cor e etc..
+}

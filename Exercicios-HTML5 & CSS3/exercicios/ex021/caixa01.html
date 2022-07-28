@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caixas</title>
+    <style>
+        h1 { /* BOX-LEVEL */
+            /* display: inline-block; -> INLINE, Porém mantem configurações de BOX*/
+            background-color: lightgray;
+            height: 300px;
+            width: 300px;
+
+            /* border-radius: 10px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: darkgrey; */
+            border-radius: 10px;
+            border: 5px solid darkgrey;
+
+            /* padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px; */
+            padding: 10px 10px 10px 10px;
+            /* Ou "padding: 10px;" para simplificar todos */
+            /* Ou "padding: 10px 20px;" para simplificar 10px de cima e 20px dos lados*/
+
+            /* margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin: auto; */
+            margin: 20px 20px 40px 20px;
+            /* margin: 20px auto 40px auto; - Centralizar*/
+
+            /* outline-width: 2px;
+            outline-style: dashed;
+            outline-color: salmon; */
+            outline: 2px dashed salmon;
+        }
+
+        a { /* INLINE-LEVEL */
+            display: block;
+            /*
+            display: block; -> BOX-LEVEL
+            display: inline; -> INLINE-LEVEL
+            */
+            border-width: 1px;
+            border-style: solid;
+            border-color: red;
+
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de caixa box-level</h1>
+    <p>Parágrafos também são exemplos de box-level, mas os <a href="#">links são exemplos de caixas inline-level</a>. Vamos ver como tudo isso funciona.</p>
+</body>
+</html>
