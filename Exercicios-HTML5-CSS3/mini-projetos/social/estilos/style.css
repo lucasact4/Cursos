@@ -13,12 +13,12 @@ html, body {
 }
 
 body {
-    background: url('../imagens/fundo-madeira.jpg') no-repeat top center;
+    background: url('../imagens/fundo-vaporwave.webp') no-repeat top center;
     background-size: cover;
     background-attachment: fixed;
 }
-
 main {
+    background-color: rgba(0, 0, 0, 0.300);
     height: 100vh;
     position: relative;
 }
@@ -28,17 +28,19 @@ section#telefone {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 627px;
+    height: 655px;
     width: 311px;
-    background: url('../imagens/frame-iphone.png') no-repeat;
+    background: url('../imagens/frame-xiaomi-red.png') no-repeat;
 }
 
 iframe#tela {
+    background-color: rgb(163, 163, 163);
     position: relative;
-    top: 81px;
-    left: 23px;
-    width: 265px;
-    height: 469px;
+    top: 16px;
+    left: 17px;
+    width: 277px;
+    height: 623px;
+    border-radius: 25px;
 }
 
 section#redes-sociais {
