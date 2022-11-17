@@ -1,0 +1,33 @@
+@charset "UTF-8";
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: #1D1D1D;
+    color: white;
+    text-align: center;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+div {
+    position: relative;
+}
+div.link {
+    padding: 15px;
+    font-size: 20px;
+}
+a:hover {
+    text-decoration: underline;
+}
+.imagem, .image{
+    transition: transform 0.2s;
+}
+.imagem:hover {
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.527);
+    transform: translate(3px, 3px);
+}
+.image:hover {
+    transform: translate(-1px, -1px);
+}
