@@ -101,18 +101,6 @@
       "id": 2
     },
     {
-      "nome": "Paulo Matias",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Cheddar",
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 4
-    },
-    {
       "nome": "Zenildo",
       "carne": "Alcatra",
       "pao": "3 Queijos",
@@ -120,7 +108,7 @@
         "Cebola roxa",
         "Bacon"
       ],
-      "status": "Finalizado",
+      "status": "Solicitado",
       "id": 5
     },
     {
@@ -131,7 +119,7 @@
         "Bacon",
         "Pepino"
       ],
-      "status": "Em produção",
+      "status": "Solicitado",
       "id": 6
     }
   ]

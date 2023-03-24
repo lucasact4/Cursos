@@ -82,6 +82,10 @@
         })
 
         const res = await req.json()
+
+        this.msg = `Pedido removido com sucesso!`
+
+        setTimeout(() => this.msg = "", 10000)
         
         this.getPedidos()
 
@@ -99,6 +103,11 @@
         })
 
         const res = await req.json()
+
+        
+        this.msg = `O pedido Nº ${res.id} foi atualizado para ${res.status}!`
+
+        setTimeout(() => this.msg = "", 10000)
 
         console.log(res)
       }
