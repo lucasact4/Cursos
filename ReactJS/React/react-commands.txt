@@ -1,0 +1,38 @@
+Anotações para criação de App React
+
+CRIAR O APP
+	Criar o projeto React e digitar o nome referente a ele
+	npx create-react-app my-login
+
+	Entrar na pasta selecionada no terminal
+	cd my-login
+
+	Abrir a pasta selecionada
+	code .
+
+	Abrir servidor React
+		Forma Yarn:
+		yarn start
+		Forma NPM
+		npm start
+
+PREPARAÇÃO DE AMBIENTE
+	App.css - CSS Página Inicial
+	App.js - PÁGINA Inicial
+	index.css - CSS Geral
+	
+	App.js Importação de itens e estados - import - export default App;
+	
+	index.css configuração geral CSS
+	html {
+	  box-sizing: border-box;
+	}
+	*,
+	*:before,
+	*:after {
+	  box-sizing: inherit;
+	}
+
+CRIAÇÃO DE ROTAS PRIVADAS
+	Comando para 
+	npm add react-router-dom
