@@ -138,7 +138,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x64-mingw-ucrt)
       racc (~> 1.4)
-    popper_js (2.11.6)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -178,6 +177,8 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -236,15 +237,16 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap-sass (~> 3.4, >= 3.4.1)
+  bootstrap-sass
   capybara
   debug
   importmap-rails
   jbuilder
   jquery-rails
-  popper_js (~> 2.10, >= 2.10.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  sass-rails
+  sassc
   sassc-rails
   selenium-webdriver
   sprockets-rails

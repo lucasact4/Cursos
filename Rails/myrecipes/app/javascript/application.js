@@ -1,13 +1,11 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
 
 //= require jquery
-//= require jquery-ujs
-//= require popper
+//= require jquery_ujs
 //= require bootstrap-sprockets
-//= require rails-ujs
 //= require turbolinks
-//= require activestorage
 //= require_tree .
-//= require bootstrap
+
+
+import "@hotwired/turbo-rails"
+import "controllers"
