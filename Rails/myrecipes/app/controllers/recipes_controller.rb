@@ -1,18 +1,16 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:show, :update]
+  before_action :set_error, only: [:new, :edit]
 
   def index
     @recipes = Recipe.all
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    
   end
 
   def new
-    @error = params[:error]
-    @count = params[:count]
-    @errors = params[:errors] == 'true'
-    @recipe = params[:recipe] || Recipe.new
   end
 
   def create
@@ -32,15 +30,10 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @error = params[:error]
-    @count = params[:count]
-    @errors = params[:errors] == 'true'
-    @recipe = params[:recipe] || Recipe.new
     @recipe = Recipe.find(params[:id]) if params[:id]
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       flash[:success] = "Recipe was updated successfully!"
       redirect_to recipe_path(@recipe)
@@ -61,6 +54,21 @@ class RecipesController < ApplicationController
   end
 
   private
+
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
+
+    def set_error
+      @error = params[:error]
+      @count = params[:count]
+      @errors = params[:errors] == 'true'
+      @recipe = params[:recipe] || Recipe.new
+    end
+
+    def set_errors
+
+    end
   
     def recipe_params
       params.require(:recipe).permit(:name, :description)
