@@ -9,7 +9,10 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @error = params[:error]
+    @count = params[:count]
+    @errors = params[:errors] == 'true'
+    @recipe = params[:recipe] || Recipe.new
   end
 
   def create
@@ -19,12 +22,21 @@ class RecipesController < ApplicationController
       flash[:success] = "Recipe was created successfully!"
       redirect_to recipe_path(@recipe)
     else
-      render 'new'
+      if @recipe.errors.any?
+        @errors = true
+        @count = @recipe.errors.count
+        @error = @recipe.errors.full_messages
+      end
+      redirect_to new_recipe_path(recipe: @recipe, errors: @errors, count: @count, error: @error)
     end
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    @error = params[:error]
+    @count = params[:count]
+    @errors = params[:errors] == 'true'
+    @recipe = params[:recipe] || Recipe.new
+    @recipe = Recipe.find(params[:id]) if params[:id]
   end
 
   def update
@@ -33,7 +45,12 @@ class RecipesController < ApplicationController
       flash[:success] = "Recipe was updated successfully!"
       redirect_to recipe_path(@recipe)
     else
-      render 'edit'
+      if @recipe.errors.any?
+        @errors = true
+        @count = @recipe.errors.count
+        @error = @recipe.errors.full_messages
+      end
+      redirect_to edit_recipe_path(recipe: @recipe, errors: @errors, count: @count, error: @error)
     end
   end
 
