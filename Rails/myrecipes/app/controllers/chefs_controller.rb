@@ -26,6 +26,29 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
+  def edit
+    @error = params[:error]
+    @count = params[:count]
+    @errors = params[:errors] == 'true'
+    @chef = params[:chef] || Chef.new
+    @chef = Chef.find(params[:id]) if params[:id]
+  end
+
+  def update
+    @chef = Chef.find(params[:id])
+    if @chef.update(chef_params)
+      flash[:success] = "Your account was updated successfully"
+      redirect_to @chef
+    else
+      if @chef.errors.any?
+        @errors = true
+        @count = @chef.errors.count
+        @error = @chef.errors.full_messages
+      end
+      redirect_to edit_chef_path(chef: @chef, errors: @errors, count: @count, error: @error)
+    end
+  end
+
   private
 
     def chef_params
