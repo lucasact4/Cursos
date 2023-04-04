@@ -3,7 +3,8 @@ require "test_helper"
 class RecipesEditTest < ActionDispatch::IntegrationTest
   
   def setup
-    @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com")
+    @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com",
+      password: "password", password_confirmation: "password")
     @recipe = Recipe.create(name: "vegetable soute", description: "great vegetable soutee, add vegetable and oil", chef: @chef)
   end
 
@@ -11,7 +12,8 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
     get edit_recipe_path(@recipe)
     assert_template 'recipes/edit'
     patch recipe_path(@recipe), params: { recipe: { name: " ", description: "some description" } }
-    assert_template 'recipes/edit'
+    assert_redirected_to edit_recipe_path(@recipe) + "?count=1&error%5B%5D=Name+can%27t+be+blank&errors=true&recipe=1"
+    follow_redirect!
     assert_select 'h2.panel-title'
     assert_select 'div.panel-body'
   end

@@ -65,10 +65,6 @@ class RecipesController < ApplicationController
       @errors = params[:errors] == 'true'
       @recipe = params[:recipe] || Recipe.new
     end
-
-    def set_errors
-
-    end
   
     def recipe_params
       params.require(:recipe).permit(:name, :description)

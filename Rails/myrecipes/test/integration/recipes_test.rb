@@ -3,7 +3,8 @@ require "test_helper"
 class RecipesTest < ActionDispatch::IntegrationTest
 
   def setup
-    @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com")
+    @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com",
+      password: "password", password_confirmation: "password")
     @recipe = Recipe.create(name: "vegetable soute", description: "great vegetable soutee, add vegetable and oil", chef: @chef)
     @recipe2 = @chef.recipes.build(name: "chicken saute", description: "great chicken dish")
     @recipe2.save
@@ -51,7 +52,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Recipe.count' do
       post recipes_path, params: { recipe: { name: " ", description: " " } }
     end
-    assert_template 'recipes/new'
+    assert_redirected_to new_recipe_path(count: 3, error: ['Name can\'t be blank', 'Description can\'t be blank', 'Description is too short (minimum is 5 characters)'], errors: true)
+    follow_redirect!
     assert_select 'h2.panel-title'
     assert_select 'div.panel-body'
   end
