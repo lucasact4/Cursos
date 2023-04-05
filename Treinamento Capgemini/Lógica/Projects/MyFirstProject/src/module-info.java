@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author funcr
- *
- */
-module MyFirstProject {
-}
