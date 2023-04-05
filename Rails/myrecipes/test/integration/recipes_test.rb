@@ -23,6 +23,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "should get recipes show" do
+    sign_in_as(@chef, "password")
     get recipe_path(@recipe)
     assert_template 'recipes/show'
     assert_match @recipe.name, response.body
@@ -34,6 +35,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "create new valid recipe" do
+    sign_in_as(@chef, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     name_of_recipe = "chicken saute"
@@ -47,12 +49,13 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "reject invalid recipe submissions" do
+    sign_in_as(@chef, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     assert_no_difference 'Recipe.count' do
       post recipes_path, params: { recipe: { name: " ", description: " " } }
     end
-    assert_redirected_to new_recipe_path(count: 3, error: ['Name can\'t be blank', 'Description can\'t be blank', 'Description is too short (minimum is 5 characters)'], errors: true)
+    assert_redirected_to new_recipe_path(count: 5, error: ['Name can\'t be blank', 'Description can\'t be blank', 'Description is too short (minimum is 5 characters)', 'Chef must exist', 'Chef can\'t be blank'], errors: true)
     follow_redirect!
     assert_select 'h2.panel-title'
     assert_select 'div.panel-body'

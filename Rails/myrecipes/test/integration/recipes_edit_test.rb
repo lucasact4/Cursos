@@ -9,9 +9,11 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   end
 
   test "reject invalid recipe update" do
+    sign_in_as(@chef, "password")
     get edit_recipe_path(@recipe)
     assert_template 'recipes/edit'
-    patch recipe_path(@recipe), params: { recipe: { name: " ", description: "some description" } }
+    put patch recipe_path(@recipe), params: { recipe: { name: " ", description: "some description" } }
+    assert_response :success
     assert_redirected_to edit_recipe_path(@recipe) + "?count=1&error%5B%5D=Name+can%27t+be+blank&errors=true&recipe=1"
     follow_redirect!
     assert_select 'h2.panel-title'
@@ -19,6 +21,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   end
 
   test "successfully edit a recipe" do
+    sign_in_as(@chef, "password")
     get edit_recipe_path(@recipe)
     assert_template 'recipes/edit'
     updated_name = "updated recipe name"

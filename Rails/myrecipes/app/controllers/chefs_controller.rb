@@ -1,6 +1,7 @@
 class ChefsController < ApplicationController
-  before_action :set_chef, only: [:show, :update, :delete]
+  before_action :set_chef, only: [:show, :update, :destroy]
   before_action :set_error, only: [:new, :edit]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @chefs = Chef.paginate(page: params[:page], per_page: 5)
@@ -68,6 +69,13 @@ class ChefsController < ApplicationController
     @count = params[:count]
     @errors = params[:errors] == 'true'
     @chef = params[:chef] || Chef.new
+  end
+
+  def require_same_user
+    if current_chef != @chef
+      flash[:danger] = "You can only edit or delete your own account"
+      redirect_to chefs_path
+    end
   end
 
 end
