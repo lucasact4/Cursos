@@ -3,6 +3,10 @@ $navbar-default-bg: #073B15;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.custom-nav {
+  margin-right: -27px;
+}
+
 .center {
   text-align: center;
 }
@@ -54,6 +58,7 @@ $navbar-default-bg: #073B15;
 
 body {
   height: 100%;
+  width: 98%;
 }
 
 footer {
