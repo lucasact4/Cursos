@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "Available Ingredients" %>
+<%= render 'shared/page_title', title: "Itens disponíveis" %>
 
 <div align="center">
   <%= will_paginate %>
@@ -17,7 +17,7 @@
             </small>
           </li>
           <% if logged_in? && current_chef.admin? %>
-            <li><%= link_to "Editar", edit_ingredient_path(ing) %></li>
+            <li class="button-edit"><%= link_to "Editar item", edit_ingredient_path(ing) %></li>
           <% end %>
         </div>
       </div>

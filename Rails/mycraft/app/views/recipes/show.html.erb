@@ -1,23 +1,23 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
 <div class="well col-md-8 col-md-offset-2">
-  <h4 class="center description"><strong>Conteúdo: </strong></h4>
-  <hr />
-  <%= simple_format(@recipe.description) %>
-  <hr />
+  <h4 class="center description"><strong class="font-title">Conteúdo: </strong></h4>
+  <br />
+  <span class="font-paragraph2"><%= simple_format(@recipe.description) %></span>
+  <br />
   <% if @recipe.ingredients.any? %>
-    <p>Itens: <%= render @recipe.ingredients %></p>
+    <p class="font-title">Itens: <%= render @recipe.ingredients %></p>
   <% end %>
   <div class="pull-right">
     <p class="center">
-      <em>Criado por:</em>
+      <em class="font-paragraph">Criado por:</em>
     </p>
     <p class="center">
       <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
     </p>
-    <p class="center">
+    <p class="center paragraph">
       <small><%= @recipe.chef.chefname.capitalize %></small>
-      <div class="pull-right">há <%= time_ago_in_words(@recipe.created_at, include_seconds: true, locale: 'pt-BR') %> atrás</div>
+      <div class="pull-right font-paragraph">há <%= time_ago_in_words(@recipe.created_at, include_seconds: true, locale: 'pt-BR') %> atrás</div>
     </p>
   </div>
   <div class="recipe-actions">
@@ -34,7 +34,7 @@
 <% if logged_in? %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h3>Comentários: </h3>
+      <h3 class="page-label">Comentários: </h3>
       <hr />
       <%= form_for([@recipe, @comment], :html => {class: "form-horizontal", role: "form"}) do |f| %>
         <div class="form-group">
@@ -59,7 +59,7 @@
 <% if @recipe.comments.any? %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h3>Comentários anteriores: </h3>
+      <h3 class="page-label">Comentários anteriores: </h3>
         <div id="messages">
           <%= render partial: 'comments/comments', object: @comments %>
         </div>
@@ -68,7 +68,7 @@
 <% else %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h3>Nenhum comentário ainda!</h3>
+      <h3 class="page-label">Nenhum comentário ainda!</h3>
     </div>
   </div>
 <% end %>
