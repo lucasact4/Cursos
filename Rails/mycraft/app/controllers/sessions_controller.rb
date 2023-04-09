@@ -8,16 +8,16 @@ class SessionsController < ApplicationController
     chef = Chef.find_by(email: params[:session][:email].downcase)
     if chef && chef.authenticate(params[:session][:password])
       session[:chef_id] = chef.id
-      flash[:success] = "You have successfully logged in"
+      flash[:success] = "Você fez login com sucesso!"
       redirect_to chef
     else
-      redirect_to login_path, flash: { danger: "There was something wrong with your login information" }
+      redirect_to login_path, flash: { danger: "Há algo de errado com as informações de login digitadas!" }
     end
   end
 
   def destroy
     session[:chef_id] = nil
-    flash[:success] = "You have logged out"
+    flash[:success] = "Você deslogou!"
     redirect_to root_path
   end
 

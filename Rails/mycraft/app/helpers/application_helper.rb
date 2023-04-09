@@ -1,10 +1,10 @@
 module ApplicationHelper
 
   def gravatar_for(user, options = { size: 80 })
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+    username = Digest::MD5::hexdigest(user.chefname.downcase)
     size = options[:size]
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    image_tag(gravatar_url, alt: user.chefname, class: "img-circle")
+    url = "https://crafatar.com/avatars/#{username}?overlay"
+    image_tag(url, alt: user.chefname, class: "minecraft-skin", width: size, height: size)
   end
 
 end

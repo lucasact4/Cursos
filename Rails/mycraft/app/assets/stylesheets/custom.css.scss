@@ -3,10 +3,6 @@ $navbar-default-bg: #073b1500;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.background {
-  
-}
-
 :root {
   --primary-color: #0A1128;
 }
@@ -20,9 +16,12 @@ $navbar-default-bg: #073b1500;
 }
 
 .jumbotron {
-  background-image: asset-url('cover_image.jpg');
+  background-image: asset-url('wall.png');
   background-size: cover;
-  height: 300px;
+  margin: auto;
+  width: 80%;
+  height: 400px;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
 }
 
 #logo {
@@ -35,20 +34,21 @@ $navbar-default-bg: #073b1500;
 }
 
 .logo-image {
+  background-image: radial-gradient(#00000020, #00000010, transparent);
   width: 190px;
   margin-right: 20px;
-  margin-top: -16px;
+  margin-top: -10px;
   margin-left: -16px;
-  transition: .3s all;   
-  transition-delay: .1s; 
+  transition: .3s all;
 }
 
 .logo-image:hover {
+  background-image: radial-gradient(#2d550018, #2d550008, transparent);
   width: 200px;
   margin-right: 15px;
-  margin-top: -21px;
+  margin-top: -14px;
   margin-left: -21px;
-  transition-delay: 0s;
+  transition-delay: .1s; 
 }
   
 #logo:hover {
@@ -57,19 +57,59 @@ $navbar-default-bg: #073b1500;
 }  
 
 .jumbotron h1 {
-  color: #222;
+  font: 30pt 'Minecrafter', sans-serif;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.75);
+  padding: 10px 0 10px 0;
   text-align: center;
   margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
+  box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.2);
 }
 
-.jumbotron h2 {
-  color: #222;
+.jumbotron p {
+  margin: auto;
+  border-radius: 10px;
+  font: 12pt 'Minecraftia', sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.75);
+  padding: 10px 0 10px 0;
+  width: 60%;
   text-align: center;
   margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
+  box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.2);
+}
+
+.content-b {
+	background-image: asset-url('content.png');
+  background-size: cover;
+  height: 300px;
+  width: 490px;
+  margin: 10px;
+  margin-top: 60px;
+  margin-left: 60px;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+}
+
+.content-b h2 {
+  font: 25pt 'Minecraftia', sans-serif;
+  color: #fff;
+  text-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.712);
+}
+
+.content-b p {
+  font: 12pt 'Minecraftia', sans-serif;
+  color: #fff;
+  text-shadow: 0.3rem 0.3rem rgba(0, 0, 0, 0.712);
+}
+
+.content-button {
+  position: absolute;
+  bottom: 50px;
+}
+
+.tittle-button-signup {
+  margin: auto;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
 }
 
 .btn-xlarge {
@@ -173,6 +213,36 @@ body {
   height: auto;
 }
 
+// paginate
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.5em;
+  margin: 0.25em;
+  border: 1px solid #ddd;
+  border-radius: 0.25em;
+  color: #333;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.pagination span.current {
+  background-color: #ddd;
+}
+
+.pagination a:hover {
+  background-color: #f5f5f5;
+}
+
+.pagination .disabled {
+  color: #aaa;
+  pointer-events: none;
+}
+
 // Nav
 
 .grass-nav {
@@ -190,17 +260,12 @@ body {
 
 // Footer
 
-.button {
-  
-}
-
 footer {
   margin-top: 45px;
 }
 
 .footer {
-  box-shadow: 0px -5px 22px -3px rgba(0,0,0,0.75);
-  box-shadow: 0px 5px 22px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px -5px 22px -3px rgba(0,0,0,0.75), 0px 5px 22px -3px rgba(0,0,0,0.75);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   height: 75px;
@@ -298,7 +363,7 @@ footer a:hover {
   
   color: #DDD;
   text-shadow: 2px 2px #000A;
-  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7, 0px 0px 25px 1px rgba(0,0,0,0.5);
   position: relative;
   top: 18px;
 }
@@ -320,7 +385,7 @@ footer a:hover {
   
   color: #DDD;
   text-shadow: 2px 2px #000A;
-  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7, 0px 0px 10px 1px rgba(0,0,0,0.5);
   position: relative;
   top: 3px;
 }
@@ -359,6 +424,11 @@ a:hover, a:focus {
   height: 23px;
   width: 23px;
   margin-bottom: -5px;
+}
+
+@font-face {
+  font-family: 'Minecrafter';
+  src: url('/assets/fonts/Minecrafter.Alt.ttf') format('truetype');
 }
 
 @font-face {

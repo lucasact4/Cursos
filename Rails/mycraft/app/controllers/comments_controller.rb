@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.chef = current_chef
     if @comment.save
-      flash[:success] = "Comment was created successfully"
+      flash[:success] = "O comentário foi criado com sucesso"
       redirect_to recipe_path(@recipe)
     else
-      flash[:danger] = "Comment was not created"
+      flash[:danger] = "O comentário não foi criado"
       redirect_to recipe_path(@recipe)
     end
   end

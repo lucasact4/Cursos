@@ -1,27 +1,51 @@
 <div class="background">
   <div class="jumbotron center">
-    <h1>Welcome to MyRecipes</h1>
-    <h2>The best recipes sharing app!</h2>
-    <p><%= link_to "Sign up for the app!", signup_path, class: "btn btn-danger btn-lg btn-xlarge" %></p>
-  </div>
-  <div>
-    <img class="imgpickaxe imgconfig">
-  </div>
-  <div class="row">
-    <div class="col-lg-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-primary btn-xlarge" href="#" role="button">View details »</a></p>
+    <h1>Bem-vindo ao Blog do MyCraft</h1>
+    <p>Várias postagens sobre como criar itens,<br>curiosidades do jogo e muito mais!</p>
+    <div class="mc-menu">
+      <div class="mc-button">
+        <%= link_to signup_path do %>
+          <%= content_tag :span, "Cadastrar-se", class: "title" %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-lg-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-primary btn-xlarge" href="#" role="button">View details »</a></p>
+  </div>
+  <div class="row content-div">
+    <div class="col-lg-4 content-b">
+      <h2>Algo aqui!</h2>
+      <p>Conteúdo...</p>
+      <div class="content-button">
+        <%= link_to root_path do %>
+          <%= content_tag :span, "Algum botão...", class: "nav-butt" %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-lg-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-      <p><a class="btn btn-primary btn-xlarge" href="#" role="button">View details »</a></p>
+    <div class="col-lg-4 content-b">
+      <h2>Algo aqui!</h2>
+      <p>Conteúdo...</p>
+      <div class="content-button">
+        <%= link_to root_path do %>
+          <%= content_tag :span, "Algum botão...", class: "nav-butt" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-4 content-b">
+      <h2>Algo aqui!</h2>
+      <p>Conteúdo...</p>
+      <div class="content-button">
+        <%= link_to root_path do %>
+          <%= content_tag :span, "Algum botão...", class: "nav-butt" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-4 content-b">
+      <h2>Algo aqui!</h2>
+      <p>Conteúdo...</p>
+      <div class="content-button">
+        <%= link_to root_path do %>
+          <%= content_tag :span, "Algum botão...", class: "nav-butt" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

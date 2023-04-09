@@ -10,7 +10,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
-      flash[:success] = "Ingredient was successfully created"
+      flash[:success] = "O item foi criado com sucesso"
       redirect_to ingredient_path(@ingredient)
     else
       if @ingredient.errors.any?
@@ -28,7 +28,7 @@ class IngredientsController < ApplicationController
 
   def update
     if @ingredient.update(ingredient_params)
-      flash[:success] = "Ingredient name was updated successfully"
+      flash[:success] = "O nome do item foi atualizado com sucesso"
       redirect_to @ingredient
     else
       redirect_to edit_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
@@ -62,7 +62,7 @@ class IngredientsController < ApplicationController
 
   def require_admin
     if !logged_in? || (logged_in? and !current_chef.admin?)
-      flash[:danger] = "Only admin users can perform that action"
+      flash[:danger] = "Somente usuários administradores podem executar essa ação"
       redirect_to ingredients_path
     end
   end

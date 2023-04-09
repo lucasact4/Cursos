@@ -15,7 +15,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     if @chef.save
       session[:chef_id] = @chef.id
-      flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App!"
+      flash[:success] = "Bem-vindo #{@chef.chefname} ao MyCraft Blog!"
       redirect_to chef_path(@chef)
     else
       if @chef.errors.any?
@@ -37,7 +37,7 @@ class ChefsController < ApplicationController
 
   def update
     if @chef.update(chef_params)
-      flash[:success] = "Your account was updated successfully"
+      flash[:success] = "Sua conta foi atualizada com sucesso!"
       redirect_to @chef
     else
       if @chef.errors.any?
@@ -52,7 +52,7 @@ class ChefsController < ApplicationController
   def destroy
     if !@chef.admin?
       @chef.destroy
-      flash[:danger] = "Chef and all associated recipes have been deleted!"
+      flash[:danger] = "Player e todas as postagens associadas foram deletadas!"
       redirect_to chefs_path
     end
   end
@@ -77,14 +77,14 @@ class ChefsController < ApplicationController
   def require_same_user
     @chef = Chef.find(params[:id])
     if current_chef != @chef and !current_chef.admin?
-      flash[:danger] = "You can only edit or delete your own account"
+      flash[:danger] = "Você só pode editar ou excluir sua própria conta!"
       redirect_to chefs_path
     end
   end
 
   def require_admin
     if logged_in? && !current_chef.admin?
-      flash[:danger] = "Only admin users can perform that action"
+      flash[:danger] = "Somente usuários administradores podem executar essa ação!"
       redirect_to root_path
     end
   end
