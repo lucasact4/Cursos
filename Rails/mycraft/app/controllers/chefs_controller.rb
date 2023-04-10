@@ -52,7 +52,7 @@ class ChefsController < ApplicationController
   def destroy
     if !@chef.admin?
       @chef.destroy
-      flash[:danger] = "Player e todas as postagens associadas foram deletadas!"
+      flash[:danger] = "Jogador e todas as postagens associadas foram deletadas!"
       redirect_to chefs_path
     end
   end

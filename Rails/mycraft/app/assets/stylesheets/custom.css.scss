@@ -19,13 +19,6 @@ $navbar-default-bg: #073b1500;
   padding: 10px 0 10px 0;
 }
 
-.control-label > label {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 3px 4px 3px 4px;
-  margin-top: -5px;
-  border-radius: 2px;
-}
-
 .page-label {
   font: 12pt 'Minecraftia', sans-serif;
   background-color: rgba(255, 255, 255, 0.8);
@@ -45,10 +38,6 @@ $navbar-default-bg: #073b1500;
 }
 
 // checkboxes
-
-.form-group {
-  margin-bottom: 20px !important;
-}
 
 .control-label-check {
   background-color: rgba(87, 87, 87, 0.8) !important;
@@ -512,6 +501,75 @@ li.button-edit a {
   box-shadow: 0px 5px 22px -3px rgba(0,0,0,0.75);
 }
 
+// Alert
+
+.red {
+  font: 16pt 'Minecraftia', sans-serif !important;
+  color: rgb(255, 0, 0);
+}
+
+.alert-danger {
+  font: 12pt 'Minecraftia', sans-serif !important;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  background-color: #1b1b1b;
+  border: 4px solid #4c4c4c;
+  padding: 5px;
+  margin: 10px auto;
+  width: 75%;
+  height: 50px;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+}
+  
+.alert-success {
+  font: 12pt 'Minecraftia', sans-serif !important;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  background-color: #1b1b1b;
+  border: 4px solid #4c4c4c;
+  padding: 5px;
+  margin: 10px auto;
+  width: 75%;
+  height: 50px;
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+}
+
+.alert-danger:hover {
+  width: 74%;
+  height: 49px;
+  margin-bottom: 9px;
+  margin-top: 12px;
+}
+
+.alert .close {
+  padding: 1px 2px 4px 4px;
+  margin-top: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  opacity: 100;
+}
+  
+.alert .close:hover {
+  color: #fff;
+  background-color: rgba(235, 28, 28, 0.534);
+}
+
+.alert {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 // Footer
 
 footer {
@@ -609,7 +667,7 @@ footer a:hover {
 .nav-butt {
 	background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
   font: 12pt 'Minecraftia', sans-serif;
-  width: 150px; height: 30px;
+  min-width: 150px; min-height: 30px;
   text-align: center;
   padding-left: 7px;
   padding-right: 7px;
@@ -622,10 +680,122 @@ footer a:hover {
   top: 18px;
 }
 
+.butt-return > a {
+	background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
+  font: 8pt 'Minecraftia', sans-serif;
+  width: 400px; height: 20px;
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  color: #DDD;
+  text-shadow: 2px 2px #000A;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7, 0px 0px 25px 1px rgba(0,0,0,0.5);
+  position: relative;
+  top: 10px;
+}
+
+.butt-return > a:hover {
+	background: #6464ffd8 center / cover;
+  text-shadow: 2px 2px #202013CC;
+  color: #FFFFA0;
+}
+
 .nav-butt:hover {
 	background: #6464ffd8 center / cover;
   text-shadow: 2px 2px #202013CC;
   color: #FFFFA0;
+}
+
+// form
+
+.control-label > label {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3px 4px 3px 4px;
+  margin-top: -5px;
+  border-radius: 2px;
+  font: 8pt 'Minecraftia', sans-serif;
+}
+
+/* Estilo para o campo de senha */
+.form-control {
+  font: 11pt 'Minecraftia', sans-serif;
+  background-color: #333;
+  border: 2px solid #1d1d1d;
+  border-radius: 0px !important;
+  color: #fff;
+  width: 500px;
+  height: 32px;
+  padding: 10px;
+  text-shadow: 1px 1px #1d1d1d;
+  width: 100%;
+}
+
+.form-control:focus {
+  background-color: #333;
+  border: 2px solid #818181;
+  color: #fff;
+  outline: none;
+}
+
+/* Estilo para o placeholder do campo de senha */
+::placeholder {
+  font: 11pt 'Minecraftia', sans-serif;
+  color: #777;
+  text-shadow: 1px 1px #000;
+}
+
+.form-control-image {
+  cursor: pointer;
+  width: 500px;
+  height: 40px;
+  background-color: #333;
+  border: 2px solid #1d1d1d;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+  color: #777;
+  text-shadow: 1px 1px #000;
+  font: 11pt 'Minecraftia', sans-serif;
+  padding: 10px;
+}
+
+.form-control-image:focus {
+  background-color: #333;
+  border: 2px solid #818181;
+  color: #fff;
+  outline: none;
+}
+
+#photo {
+  position: relative;
+  overflow: hidden;
+}
+
+#photo::before {
+  position: relative;
+  top: -5px;
+  content: 'Escolher arquivo';
+  display: inline-block;
+  padding: 8px 16px;
+  height: 25px;
+  width: 150px;
+  margin-right: -120px;
+  background-color: #4C6E5A;
+  color: #FFF;
+  border-radius: 4px;
+  font: 8pt 'Minecraftia', sans-serif;
+}
+
+#photo::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#photo:hover::before {
+  background-color: rgb(95, 95, 95);
+}
+
+/* Estilo para o fundo do formulário */
+body {
+  background-color: #111;
 }
 
 .space {
@@ -681,7 +851,7 @@ a:hover, a:focus {
 }
 
 @font-face {
-  font-family: 'Minecrafter';
+  font-family: 'Minecrafter Alt';
   src: url('/assets/fonts/Minecrafter.Alt.ttf') format('truetype');
 }
 
