@@ -34,6 +34,16 @@ $navbar-default-bg: #073b1500;
   border-radius: 2px;
 }
 
+.page-label2 {
+  margin-top: 20px !important;
+  text-align: center !important;
+  font: 12pt 'Minecraftia', sans-serif;
+  background-color: rgba(245, 255, 255, 0.8);
+  padding: 3px 4px 3px 4px;
+  margin-top: -5px;
+  border-radius: 2px;
+}
+
 // checkboxes
 
 .form-group {
@@ -223,12 +233,42 @@ $navbar-default-bg: #073b1500;
   text-decoration: none;
 }
 
-body {
+.background2 {
+  position: absolute;
+  left: 0;
   width: 98%;
+	background-color: rgb(90, 90, 90);
+  background-image: url('mineral-topp.png'), url('mineral-middle.png');
+  background-size: 50%, 50% auto;
+  background-repeat: repeat-x, repeat;
+  background-position: top, top;
+}
+
+.background2 {
+  position: absolute;
+  z-index: -1;
+}
+
+.container {
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.background {
+  border-radius: 7px;
 	background-color: #fff;
 	background-image: asset-url('background-image.jpeg');
 	background-size: cover;
   background-attachment: fixed; /* mantém a imagem de fundo fixa */
+  backdrop-filter: blur(5px); /* adicionar efeito de desfoque */
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+}
+
+.inner-div {
+  padding: 20px;
+  border-radius: 7px;
+  backdrop-filter: blur(3px); /* adicionar efeito de desfoque */
 }
 
 .description {
@@ -510,7 +550,7 @@ footer a:hover {
 
 .stone {
   margin-right: -27px;
-  background-image: asset-url('stone.png');
+  background-image: asset-url('bedrock.png');
   background-size: contain;
   height: 70px;
   width: 100%; /* aumenta a largura do elemento para acomodar duas imagens */
