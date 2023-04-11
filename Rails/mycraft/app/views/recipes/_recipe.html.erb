@@ -12,7 +12,7 @@
       <p class="font-title2">Itens: <span class="itens-use"><%= render recipe.ingredients %></span></p>
     <% end %>
     <p>
-    <span class="quiet"><small>Criado há <%= time_ago_in_words(recipe.created_at, include_seconds: true, locale: 'pt-BR') %> por <%= recipe.chef.chefname.capitalize %> | <%= pluralize(recipe.comments.count, 'comentário') %></small></span>
+    <span class="quiet"><small>Criado há <%= time_ago_in_words(recipe.created_at, include_seconds: true, locale: 'pt') %> por <%= recipe.chef.chefname.capitalize %> | <%= pluralize(recipe.comments.count, 'comentário') %></small></span>
     </p>
     <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
       <div class="recipe-actions recipe-actions-itens">

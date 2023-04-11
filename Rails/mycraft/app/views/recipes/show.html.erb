@@ -19,7 +19,7 @@
         </p>
         <p class="center paragraph">
           <small><%= @recipe.chef.chefname.capitalize %></small>
-          <div class="pull-right font-paragraph">há <%= time_ago_in_words(@recipe.created_at, include_seconds: true, locale: 'pt-BR') %> atrás</div>
+          <div class="pull-right font-paragraph">há <%= time_ago_in_words(@recipe.created_at, include_seconds: true, locale: 'pt') %> atrás</div>
         </p>
       </div>
       <div class="recipe-actions">

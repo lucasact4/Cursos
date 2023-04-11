@@ -7,7 +7,7 @@
   <div class="col-md-8 well well2">
     <p class="font-paragraph3"><%= comment.description %><p>
     <p>
-      <span class="quiet"><small class="font-paragraph">Criado: <span class="font-paragraph4"><%= distance_of_time_in_words(comment.created_at, Time.zone.now, include_seconds: true, locale: 'pt-BR') %> atrás por 
+      <span class="quiet"><small class="font-paragraph">Criado: <span class="font-paragraph4"><%= distance_of_time_in_words(comment.created_at, Time.zone.now, include_seconds: true, locale: 'pt') %> atrás por 
     <%= comment.chef.chefname %></span></small></span>
     </p>
   </div>

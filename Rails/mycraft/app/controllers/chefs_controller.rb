@@ -21,7 +21,7 @@ class ChefsController < ApplicationController
       if @chef.errors.any?
         @errors = true
         @count = @chef.errors.count
-        @error = @chef.errors.full_messages
+        @error = @chef.errors.messages
       end
       redirect_to signup_path(chef: @chef, errors: @errors, count: @count, error: @error)
     end
@@ -43,7 +43,7 @@ class ChefsController < ApplicationController
       if @chef.errors.any?
         @errors = true
         @count = @chef.errors.count
-        @error = @chef.errors.full_messages
+        @error = @chef.errors.messages
       end
       redirect_to edit_chef_path(chef: @chef, errors: @errors, count: @count, error: @error)
     end

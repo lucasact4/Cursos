@@ -16,7 +16,7 @@ class IngredientsController < ApplicationController
       if @ingredient.errors.any?
         @errors = true
         @count = @ingredient.errors.count
-        @error = @ingredient.errors.full_messages
+        @error = @ingredient.errors.messages
       end
       redirect_to new_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
     end
@@ -31,6 +31,11 @@ class IngredientsController < ApplicationController
       flash[:success] = "O nome do item foi atualizado com sucesso"
       redirect_to @ingredient
     else
+      if @ingredient.errors.any?
+        @errors = true
+        @count = @ingredient.errors.count
+        @error = @ingredient.errors.messages
+      end
       redirect_to edit_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
     end
   end
