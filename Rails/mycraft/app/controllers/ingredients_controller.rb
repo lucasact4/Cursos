@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:edit, :update, :show]
+  before_action :set_ingredient, only: [:destroy, :update, :show]
   before_action :set_error, only: [:new, :edit]
   before_action :require_admin, except: [:show, :index]
   
@@ -38,6 +38,12 @@ class IngredientsController < ApplicationController
       end
       redirect_to edit_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
     end
+  end
+
+  def destroy
+    Ingredient.find(params[:id]).destroy
+    flash[:success] = "Item excluído com sucesso!"
+    redirect_to ingredients_path
   end
 
   def show
