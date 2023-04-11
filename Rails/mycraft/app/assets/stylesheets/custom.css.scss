@@ -106,6 +106,56 @@ $navbar-default-bg: #073b1500;
   padding-left: 10px !important;
 }
 
+// panel error
+
+.panel-heading {
+  box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5), inset 0.5px 0.5px 1px 1px rgba(219, 70, 70, 0.75), inset -1px -1px 1px 0px rgba(219, 70, 70, 0.75), 0.5px 0.5px 1px 1px rgba(219, 70, 70, 0.75), -1px -1px 1px 0px rgba(219, 70, 70, 0.75) !important;
+  background-color: #cf91917c !important;
+  border: 2px solid #da2a2a !important;
+}
+
+.panel-danger {
+  h2 {
+    font: 14pt 'Minecraftia', sans-serif; // fonte inspirada no jogo Minecraft
+    color: #c52929;
+    text-shadow: 1px 1px 0px #ffffff81 !important;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    .panel-title {
+      margin: 0;
+      padding: 10px;
+      &::before {
+        content: ''; // adicionar ícone antes do título
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-image: url('https://i.imgur.com/HN0iDhL.png'); // imagem do ícone do Minecraft
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .panel-body {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        font: 10pt 'Minecraftia', sans-serif;
+        color: rgb(197, 41, 41);
+        text-shadow: 1px 1px 0px #ffffff94 !important;
+        padding: 5px;
+        &:before {
+          content: '\00BB'; // adicionar seta na frente dos itens da lista
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
 // outros
 
 .custom-nav {

@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    flash[:success] = "Receita excluída com sucesso!"
+    flash[:success] = "Postagem excluída com sucesso!"
     redirect_to recipes_path
   end
 
