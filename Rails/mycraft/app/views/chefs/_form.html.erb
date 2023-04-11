@@ -21,7 +21,7 @@
       </div>
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label :email %>
+          <%= f.label :email, "Seu email" %>
         </div>
         <div class="col-md-8">
           <%= f.email_field :email, class: "form-control", placeholder: "Digite seu email..." %>
@@ -46,12 +46,12 @@
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
           <%= f.submit(@chef.new_record? ? "Criar conta" : "Atualizar conta",
-            class: "btn btn-primary btn-lg btn-xlarge") %>
+            class: "nav-butt") %>
         </div>
       </div>
     <% end %>
-    <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "Cancelar solicitação e retornar à listagem de receitas", recipes_path %>]
+    <div class="center butt-return">
+      <%= link_to "Cancelar solicitação e retornar à listagem de postagens", recipes_path %>
     </div>
   </div>
 </div>

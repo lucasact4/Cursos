@@ -20,10 +20,17 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <%= link_to chefs_path do %>
-            <%= content_tag :span, "Jogadores", class: "nav-butt" %>
+            <span class= "nav-butt">
+              <span class="imgconfig imgsteve"></span>
+              <%= content_tag :span, "Jogadores"%>
+            </span>
+            <span class="space2"></span>
           <% end %>
           <%= link_to recipes_path do %>
-            <%= content_tag :span, "Postagens", class: "nav-butt" %>
+            <span class= "nav-butt">
+              <span class="imgconfig imgposts"></span>
+              <%= content_tag :span, "Postagens"%>
+            </span>
           <% end %>
           <% if logged_in? %>
             <li class="dropdown">
@@ -70,7 +77,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><%= current_chef.chefname.capitalize %>'s Profile <%= "Admin" if current_chef.admin? %><span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><%= current_chef.chefname.capitalize %> Perfil <%= "Admin" if current_chef.admin? %><span class="caret"></span></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Ver meu perfil", chef_path(current_chef) %></li>
                 <li><%= link_to "Editar meu perfil", edit_chef_path(current_chef) %></li>
@@ -78,6 +85,7 @@
                 <li><%= link_to "Sair", logout_path, method: :delete %></li>
               </ul>
             </li>
+            <span class= "imgconfig2"><%= link_to gravatar_for(current_chef, size: 45 ), chef_path(current_chef), class: "imgconfig3" %></span>
           <% else %>
             <%= link_to login_path do %>
               <%= content_tag :span, "Entrar", class: "nav-butt" %>

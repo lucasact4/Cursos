@@ -4,13 +4,29 @@
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h2 class="panel-title">
-            <%= pluralize(obj3, "error") %>
-            prohibited this <%= obj1.class %> from being saved:
+            <% entity_name = case obj1
+                              when Ingredient then 'item'
+                              when Chef then 'jogador'
+                              when Recipe then 'postagem'
+                              else obj1.class.to_s.downcase
+                            end %>
+            <% if obj3.to_i == 1 %>
+              <%= "1 erro impediu" %>
+            <% else %>
+              <%= "#{obj3} erros empediram" %>
+            <% end %>
+            <% if entity_name == 'item' || entity_name == 'jogador' %>
+              <%= "que este #{entity_name} fosse salvo" %>
+            <% else %>
+              <%= "que esta #{entity_name} fosse salva" %>
+            <% end %>
           </h2>
           <div class="panel-body">
             <ul>
-              <% obj4.each do |msg| %>
-                <li><%= msg %></li>
+              <% obj4.each do |attribute, error_messages| %>
+                <% error_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
               <% end %>
             </ul>
           </div>

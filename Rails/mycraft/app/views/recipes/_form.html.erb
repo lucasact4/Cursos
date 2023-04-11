@@ -21,7 +21,7 @@
       </div>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-offset-2 col-md-8">
+          <div class="control-label-check col-md-offset-2 col-md-8">
             <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
               <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
             <% end %>
@@ -30,12 +30,12 @@
       </div>
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-          <%= f.submit(@recipe.new_record? ? "Criar postagem" : "Editar postagem", class: "btn btn-primary btn-lg btn-xlarge") %>
+          <%= f.submit(@recipe.new_record? ? "Criar postagem" : "Editar postagem", class: "nav-butt") %>
         </div>
       </div>
     <% end %>
-    <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "Cancelar solicitação e retornar à listagem de receitas", recipes_path %>]
+    <div class="center butt-return">
+      <%= link_to "Cancelar solicitação e retornar à listagem de postagens", recipes_path %>
     </div>
   </div>
 </div>

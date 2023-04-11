@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    I18n.locale = 'pt-BR'
+    I18n.locale = 'pt'
     @recipes = Recipe.paginate(page: params[:page], per_page: 5)
   end
 
@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
       if @recipe.errors.any?
         @errors = true
         @count = @recipe.errors.count
-        @error = @recipe.errors.full_messages
+        @error = @recipe.errors.messages
       end
       redirect_to new_recipe_path(recipe: @recipe, errors: @errors, count: @count, error: @error)
     end
@@ -45,7 +45,7 @@ class RecipesController < ApplicationController
       if @recipe.errors.any?
         @errors = true
         @count = @recipe.errors.count
-        @error = @recipe.errors.full_messages
+        @error = @recipe.errors.messages
       end
       redirect_to edit_recipe_path(recipe: @recipe, errors: @errors, count: @count, error: @error)
     end
@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    flash[:success] = "Receita excluída com sucesso!"
+    flash[:success] = "Postagem excluída com sucesso!"
     redirect_to recipes_path
   end
 

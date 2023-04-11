@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:edit, :update, :show]
+  before_action :set_ingredient, only: [:destroy, :update, :show]
   before_action :set_error, only: [:new, :edit]
   before_action :require_admin, except: [:show, :index]
   
@@ -16,7 +16,7 @@ class IngredientsController < ApplicationController
       if @ingredient.errors.any?
         @errors = true
         @count = @ingredient.errors.count
-        @error = @ingredient.errors.full_messages
+        @error = @ingredient.errors.messages
       end
       redirect_to new_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
     end
@@ -31,8 +31,19 @@ class IngredientsController < ApplicationController
       flash[:success] = "O nome do item foi atualizado com sucesso"
       redirect_to @ingredient
     else
+      if @ingredient.errors.any?
+        @errors = true
+        @count = @ingredient.errors.count
+        @error = @ingredient.errors.messages
+      end
       redirect_to edit_ingredient_path(ingredient: @ingredient, errors: @errors, count: @count, error: @error)
     end
+  end
+
+  def destroy
+    Ingredient.find(params[:id]).destroy
+    flash[:success] = "Item excluído com sucesso!"
+    redirect_to ingredients_path
   end
 
   def show

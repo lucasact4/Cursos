@@ -6,16 +6,16 @@
     </section>
   </div>
   <div class="col-md-8 well">
-    <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
-    <p><%= truncate(recipe.description, length: 150) %></p>
+    <h4 class="font-title">Titúlo: <%= link_to recipe.name, recipe_path(recipe) %></h4>
+    <p class="font-title">Conteúdo: <span class="font-title3"><%= truncate(recipe.description, length: 150) %></span></p>
     <% if recipe.ingredients.any? %>
-      <p>Itens: <%= render recipe.ingredients %></p>
+      <p class="font-title2">Itens: <span class="itens-use"><%= render recipe.ingredients %></span></p>
     <% end %>
     <p>
-    <span class="quiet"><small>Criado há <%= time_ago_in_words(recipe.created_at, include_seconds: true, locale: 'pt-BR') %> por <%= recipe.chef.chefname.capitalize %> | <%= pluralize(recipe.comments.count, 'comentário') %></small></span>
+    <span class="quiet"><small>Criado há <%= time_ago_in_words(recipe.created_at, include_seconds: true, locale: 'pt') %> por <%= recipe.chef.chefname.capitalize %> | <%= pluralize(recipe.comments.count, 'comentário') %></small></span>
     </p>
     <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
-      <div class="recipe-actions">
+      <div class="recipe-actions recipe-actions-itens">
         <%= link_to "Editar", edit_recipe_path(recipe), class: "btn btn-xs btn-warning" %>
         <%= link_to "Excluir", recipe_path(recipe), method: :delete,
           data: { confirm: "Tem certeza de que deseja excluir esta postagem?" },
