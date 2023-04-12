@@ -1,26 +1,26 @@
-class ChefsController < ApplicationController
-  before_action :set_chef, only: [:show, :update, :destroy]
+class JogadoresController < ApplicationController
+  before_action :set_jogador, only: [:show, :update, :destroy]
   before_action :set_error, only: [:new, :edit]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
 
   def index
-    @chefs = Chef.paginate(page: params[:page], per_page: 5)
+    @jogadores = Jogador.paginate(page: params[:page], per_page: 5)
   end
 
   def new
   end
 
   def create
-    @chef = Chef.new(chef_params)
-    if @chef.save
-      session[:chef_id] = @chef.id
-      flash[:success] = "Bem-vindo #{@chef.chefname} ao MyCraft Blog!"
-      redirect_to chef_path(@chef)
+    @jogador = Jogador.new(jogador_params)
+    if @jogador.save
+      session[:jogador_id] = @jogador.id
+      flash[:success] = "Bem-vindo #{@jogador.chefname} ao MyCraft Blog!"
+      redirect_to jogador_path(@jogador)
     else
-      if @chef.errors.any?
+      if @jogador.errors.any?
         @errors = true
-        @count = @chef.errors.count
+        @count = @jogador.errors.count
         @error = @chef.errors.messages
       end
       redirect_to signup_path(chef: @chef, errors: @errors, count: @count, error: @error)

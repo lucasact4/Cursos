@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_chef, :logged_in?
+  helper_method :current_jogador, :logged_in?
 
-  def current_chef
-    @current_chef ||= Chef.find(session[:chef_id]) if session[:chef_id]
+  def current_jogador
+    @current_jogador ||= Jogador.find(session[:jogador_id]) if session[:jogador_id]
   end
 
   def logged_in?
-    !!current_chef
+    !!current_jogador
   end
 
   def require_user
