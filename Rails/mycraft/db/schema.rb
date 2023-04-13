@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_233633) do
-  create_table "chefs", force: :cascade do |t|
-    t.string "chefname"
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_050817) do
+  create_table "comments", force: :cascade do |t|
+    t.text "description"
+    t.integer "player_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.integer "chef_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "playername"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -20,29 +39,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_233633) do
     t.boolean "admin", default: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "description"
-    t.integer "chef_id"
-    t.integer "recipe_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "post_items", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "item_id"
   end
 
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "recipe_ingredients", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "ingredient_id"
-  end
-
-  create_table "recipes", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "chef_id"
+    t.integer "player_id"
   end
 
 end

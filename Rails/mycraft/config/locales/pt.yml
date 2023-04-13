@@ -35,16 +35,16 @@ pt:
         record_not_destroyed: "Não foi possível excluir %{record}"
         record_not_saved: "Houve problemas com os seguintes campos:"
       models:
-        chef:
+        player:
           attributes:
-            chefname:
+            playername:
               blank: "O nome do jogador não pode estar em branco"
             email:
               blank: "O email do jogador não pode estar em branco"
               invalid: "O email do jogador é inválido"
             password:
               blank: "A senha do jogador não pode estar em branco"
-        recipe:
+        post:
           attributes:
             name:
               blank: "O nome da postagem não pode estar em branco"
@@ -52,9 +52,9 @@ pt:
             description:
               blank: "A descrição da postagem não pode estar em branco"
               too_short: "A descrição da postagem é muito curta (mínimo de %{count} caracteres)"
-            chef:
+            player:
               blank: "O jogador da postagem não pode estar em branco"
-            ingredient:
+            item:
               blank: "A lista de itens da receita não pode estar em branco"
   will_paginate:
     previous_label: "Anterior"
@@ -68,6 +68,9 @@ pt:
       x_seconds:
         one: "1 segundo"
         other: "%{count} segundos"
+      less_than_x_minutes:
+        one: "menos de 1 minuto"
+        other: "menos de %{count} minutos"
       x_minutes:
         one: "1 minuto"
         other: "%{count} minutos"
@@ -80,6 +83,19 @@ pt:
       about_x_months:
         one: "cerca de 1 mês"
         other: "cerca de %{count} meses"
-      x_years:
-        one: "1 ano"
-        other: "%{count} anos"
+      about_x_years:
+        one: "cerca de 1 ano"
+        other: "cerca de %{count} anos"
+    prompts:
+      year: "Ano"
+      month: "Mês"
+      day: "Dia"
+      hour: "Hora"
+      minute: "Minuto"
+      second: "Segundo"
+    format:
+      default: "%d/%m/%Y %H:%M:%S"
+      short: "%d de %B, %H:%M"
+      long: "%A, %d de %B de %Y, %H:%M"
+      only_date: "%d/%m/%Y"
+      only_time: "%H:%M:%S"

@@ -5,9 +5,9 @@
         <div class="panel-heading">
           <h2 class="panel-title">
             <% entity_name = case obj1
-                              when Ingredient then 'item'
-                              when Chef then 'jogador'
-                              when Recipe then 'postagem'
+                              when Item then 'item'
+                              when Player then 'jogador'
+                              when Post then 'postagem'
                               else obj1.class.to_s.downcase
                             end %>
             <% if obj3.to_i == 1 %>

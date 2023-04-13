@@ -2,15 +2,15 @@ class CommentsController < ApplicationController
   before_action :require_user
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
-    @comment = @recipe.comments.build(comment_params)
-    @comment.chef = current_chef
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    @comment.player = current_player
     if @comment.save
       flash[:success] = "O comentário foi criado com sucesso"
-      redirect_to recipe_path(@recipe)
+      redirect_to post_path(@post)
     else
       flash[:danger] = "O comentário não foi criado"
-      redirect_to recipe_path(@recipe)
+      redirect_to post_path(@post)
     end
   end
 

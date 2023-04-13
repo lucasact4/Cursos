@@ -4,23 +4,23 @@
     
     <div align="center">
       <%= will_paginate %>
-      <% @ingredients.each do |ing| %>
+      <% @items.each do |ite| %>
         <ul class="listing">
           <div class="row">
             <div class="well col-md-4 col-md-offset-4">
-              <li class="chef-title"><%= link_to ing.name.capitalize, ingredient_path(ing) %></li>
+              <li class="player-title"><%= link_to ite.name.capitalize, item_path(ite) %></li>
               <li>
                 <small>
-                  <% if ing.recipes.count == 1 %>
-                    <%= "#{ing.recipes.count} postagem" %>
+                  <% if ite.posts.count == 1 %>
+                    <%= "#{ite.posts.count} postagem" %>
                   <% else %>
-                    <%= "#{ing.recipes.count} postagens" %>
+                    <%= "#{ite.posts.count} postagens" %>
                   <% end %>
                 </small>
               </li>
-              <% if logged_in? && current_chef.admin? %>
-                <li class="button-edit btn btn-xs btn-warning"><%= link_to "Editar item", edit_ingredient_path(ing) %></li>
-                <li class="button-edit btn btn-xs btn-danger"><%= link_to "Excluir item", ingredient_path(ing), method: :delete,
+              <% if logged_in? && current_player.admin? %>
+                <li class="button-edit btn btn-xs btn-warning"><%= link_to "Editar item", edit_item_path(ite) %></li>
+                <li class="button-edit btn btn-xs btn-danger"><%= link_to "Excluir item", item_path(ite), method: :delete,
                     data: { confirm: "Tem certeza de que deseja excluir esta postagem?" } %></li>
               <% end %>
             </div>
