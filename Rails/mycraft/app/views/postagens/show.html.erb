@@ -1,35 +1,35 @@
 <div class="background">
   <div class="inner-div">
-    <%= render 'shared/page_title', title: @recipe.name %>
+    <%= render 'shared/page_title', title: @postagem.name %>
     
     <div class="well col-md-8 col-md-offset-2">
       <h4 class="center description"><strong class="font-title">Conteúdo: </strong></h4>
       <br />
-      <span class="font-paragraph2"><%= simple_format(@recipe.description) %></span>
+      <span class="font-paragraph2"><%= simple_format(@postagem.description) %></span>
       <br />
-      <% if @recipe.ingredients.any? %>
-        <p class="font-title">Itens: <%= render @recipe.ingredients %></p>
+      <% if @postagem.itens.any? %>
+        <p class="font-title">Itens: <%= render @postagem.itens %></p>
       <% end %>
       <div class="pull-right">
         <p class="center">
           <em class="font-paragraph">Criado por:</em>
         </p>
         <p class="center">
-          <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
+          <%= link_to gravatar_for(@postagem.jogador), jogador_path(@postagem.jogador) %>
         </p>
         <p class="center paragraph">
-          <small><%= @recipe.chef.chefname.capitalize %></small>
-          <div class="pull-right font-paragraph">há <%= time_ago_in_words(@recipe.created_at, include_seconds: true, locale: 'pt') %> atrás</div>
+          <small><%= @postagem.jogador.jogadorname.capitalize %></small>
+          <div class="pull-right font-paragraph">há <%= time_ago_in_words(@postagem.created_at, include_seconds: true, locale: 'pt') %> atrás</div>
         </p>
       </div>
-      <div class="recipe-actions">
-        <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
-          <%= link_to "Editar", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
-          <%= link_to "Excluir", recipe_path(@recipe), method: :delete,
+      <div class="postagem-actions">
+        <% if logged_in? && (current_jogador == @postagem.jogador || current_jogador.admin?) %>
+          <%= link_to "Editar", edit_postagem_path(@postagem), class: "btn btn-xs btn-warning" %>
+          <%= link_to "Excluir", postagem_path(@postagem), method: :delete,
             data: { confirm: "Tem certeza de que deseja excluir esta postagem?" },
             class: "btn btn-xs btn-danger" %>
         <% end %>
-        <%= link_to "Voltar à postagens", recipes_path, class: "btn btn-xs btn-primary" %>
+        <%= link_to "Voltar à postagens", postagens_path, class: "btn btn-xs btn-primary" %>
       </div>
     </div>
     
@@ -38,7 +38,7 @@
         <div class="col-md-8 col-md-offset-2">
           <h3 class="page-label">Comentários: </h3>
           <br>
-          <%= form_for([@recipe, @comment], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+          <%= form_for([@postagem, @comentario], :html => {class: "form-horizontal", role: "form"}) do |f| %>
             <div class="form-group">
               <div class="control-label col-md-2">
                 <%= f.label :description, "Comentar" %>
@@ -59,12 +59,12 @@
       </div>
     <% end %>
     
-    <% if @recipe.comments.any? %>
+    <% if @postagem.comentarios.any? %>
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h3 class="page-label">Comentários anteriores: </h3>
             <div id="messages">
-              <%= render partial: 'comments/comments', object: @comments %>
+              <%= render partial: 'comentarios/comentarios', object: @comentarios %>
             </div>
         </div>
       </div>

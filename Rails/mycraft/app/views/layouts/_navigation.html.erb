@@ -19,14 +19,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <%= link_to chefs_path do %>
+          <%= link_to jogadores_path do %>
             <span class= "nav-butt">
               <span class="imgconfig imgsteve"></span>
               <%= content_tag :span, "Jogadores"%>
             </span>
             <span class="space2"></span>
           <% end %>
-          <%= link_to recipes_path do %>
+          <%= link_to postagens_path do %>
             <span class= "nav-butt">
               <span class="imgconfig imgposts"></span>
               <%= content_tag :span, "Postagens"%>
@@ -36,7 +36,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><span class="imgconfig imgcreeper"></span>Mais<span class="caret"></span></span></a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Criar novo post", new_recipe_path %></li>
+                <li><%= link_to "Criar novo post", new_postagen_path %></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">----</a></li>
               </ul>
@@ -45,14 +45,14 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><span class="imgconfig imgpickaxe"></span>Itens<span class="caret"></span></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Todos Itens", ingredients_path %></li>
+              <li><%= link_to "Todos Itens", items_path %></li>
               <li role="separator" class="divider"></li>
-              <% Ingredient.all.each do |ingredient| %>
-                <li><%= link_to ingredient.name.capitalize, ingredient_path(ingredient) %></li>
+              <% Item.all.each do |item| %>
+                <li><%= link_to item.name.capitalize, item_path(item) %></li>
               <% end %>
-              <% if logged_in? && current_chef.admin? %>
+              <% if logged_in? && current_jogador.admin? %>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "Adicionar item", new_ingredient_path %></li>
+                <li><%= link_to "Adicionar item", new_item_path %></li>
               <% end %>
             </ul>
           </li>
@@ -69,7 +69,7 @@
         <ul>
           <div>
             <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
-              <%= image_tag "MyCraft.gif", alt: "MyRecipes", class: "logo-image" %>
+              <%= image_tag "MyCraft.gif", alt: "Mypostagens", class: "logo-image" %>
             <% end %>
           </div>
         </ul>
@@ -77,15 +77,15 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><%= current_chef.chefname.capitalize %> Perfil <%= "Admin" if current_chef.admin? %><span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="space"><%= current_jogador.jogadorname.capitalize %> Perfil <%= "Admin" if current_jogador.admin? %><span class="caret"></span></span></a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Ver meu perfil", chef_path(current_chef) %></li>
-                <li><%= link_to "Editar meu perfil", edit_chef_path(current_chef) %></li>
+                <li><%= link_to "Ver meu perfil", jogadore_path(current_jogador) %></li>
+                <li><%= link_to "Editar meu perfil", edit_jogadore_path(current_jogador) %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "Sair", logout_path, method: :delete %></li>
               </ul>
             </li>
-            <span class= "imgconfig2"><%= link_to gravatar_for(current_chef, size: 45 ), chef_path(current_chef), class: "imgconfig3" %></span>
+            <span class= "imgconfig2"><%= link_to gravatar_for(current_jogador, size: 45 ), jogadore_path(current_jogador), class: "imgconfig3" %></span>
           <% else %>
             <%= link_to login_path do %>
               <%= content_tag :span, "Entrar", class: "nav-butt" %>

@@ -1,8 +1,8 @@
-<%= render 'shared/errors', obj1: @recipe, obj2: @errors, obj3: @count, obj4: @error %>
+<%= render 'shared/errors', obj1: @postagem, obj2: @errors, obj3: @count, obj4: @error %>
 
 <div class="row">
   <div class="col-md-12">
-    <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <%= form_for(@postagem, :html => {class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :name, "Título do post"%>
@@ -22,7 +22,7 @@
       <div class="form-group">
         <div class="row">
           <div class="control-label-check col-md-offset-2 col-md-8">
-            <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+            <%= f.collection_check_boxes :item_ids, Item.all, :id, :name do |cb| %>
               <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
             <% end %>
           </div>
@@ -30,12 +30,12 @@
       </div>
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-          <%= f.submit(@recipe.new_record? ? "Criar postagem" : "Editar postagem", class: "nav-butt") %>
+          <%= f.submit(@postagem.new_record? ? "Criar postagem" : "Editar postagem", class: "nav-butt") %>
         </div>
       </div>
     <% end %>
     <div class="center butt-return">
-      <%= link_to "Cancelar solicitação e retornar à listagem de postagens", recipes_path %>
+      <%= link_to "Cancelar solicitação e retornar à listagem de postagens", postagens_path %>
     </div>
   </div>
 </div>

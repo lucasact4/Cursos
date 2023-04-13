@@ -1,4 +1,5 @@
 class Comentario < ApplicationRecord
+  self.table_name = "comentarios"
   validates :description, presence: true, length: { minimum: 4, maximum: 140 }
   belongs_to :jogador
   belongs_to :postagem

@@ -15,76 +15,76 @@ class JogadoresController < ApplicationController
     @jogador = Jogador.new(jogador_params)
     if @jogador.save
       session[:jogador_id] = @jogador.id
-      flash[:success] = "Bem-vindo #{@jogador.chefname} ao MyCraft Blog!"
+      flash[:success] = "Bem-vindo(a) #{@jogador} ao MyCraft Blog!"
       redirect_to jogador_path(@jogador)
     else
       if @jogador.errors.any?
         @errors = true
         @count = @jogador.errors.count
-        @error = @chef.errors.messages
+        @error = @jogador.errors.messages
       end
-      redirect_to signup_path(chef: @chef, errors: @errors, count: @count, error: @error)
+      redirect_to signup_path(jogador: @jogador, errors: @errors, count: @count, error: @error)
     end
   end
 
   def show
-    @chef_recipes = @chef.recipes.paginate(page: params[:page], per_page: 5)
+    @jogador_postagens = @jogador.postagens.paginate(page: params[:page], per_page: 5)
   end
 
   def edit
-    @chef = Chef.find(params[:id]) if params[:id]
+    @jogador = Jogador.find(params[:id]) if params[:id]
   end
 
   def update
-    if @chef.update(chef_params)
+    if @jogador.update(jogador_params)
       flash[:success] = "Sua conta foi atualizada com sucesso!"
-      redirect_to @chef
+      redirect_to @jogador
     else
-      if @chef.errors.any?
+      if @jogador.errors.any?
         @errors = true
-        @count = @chef.errors.count
-        @error = @chef.errors.messages
+        @count = @jogador.errors.count
+        @error = @jogador.errors.messages
       end
-      redirect_to edit_chef_path(chef: @chef, errors: @errors, count: @count, error: @error)
+      redirect_to edit_jogador_path(jogador: @jogador, errors: @errors, count: @count, error: @error)
     end
   end
 
   def destroy
-    if !@chef.admin?
-      @chef.destroy
+    if !@jogador.admin?
+      @jogador.destroy
       flash[:danger] = "Jogador e todas as postagens associadas foram deletadas!"
-      redirect_to chefs_path
+      redirect_to jogadores_path
     end
   end
 
   private
 
-  def chef_params
-    params.require(:chef).permit(:chefname, :email, :password, :password_confirmation)
+  def jogador_params
+    params.require(:jogador).permit(:jogadorname, :email, :password, :password_confirmation)
   end
 
-  def set_chef
-    @chef = Chef.find(params[:id])
+  def set_jogador
+    @jogador = Jogador.find(params[:id])
   end
-  
+
   def set_error
     @error = params[:error]
     @count = params[:count]
     @errors = params[:errors] == 'true'
-    @chef = params[:chef] || Chef.new
+    @jogador = params[:jogador] || Jogador.new
   end
 
   def require_same_user
-    @chef = Chef.find(params[:id])
-    if current_chef != @chef and !current_chef.admin?
+    @jogador = Jogador.find(params[:id])
+    if current_jogador != @jogador and !current_jogador.admin?
       flash[:danger] = "Você só pode editar ou excluir sua própria conta!"
-      redirect_to chefs_path
+      redirect_to jogadores_path
     end
   end
 
   def require_admin
-    if logged_in? && !current_chef.admin?
-      flash[:danger] = "Somente usuários administradores podem executar essa ação!"
+    if logged_in? && !current_jogador.admin?
+      flash[:danger] = "Somente jogadores administradores podem executar essa ação!"
       redirect_to root_path
     end
   end
