@@ -3,11 +3,11 @@
     <%= render 'shared/page_title', title: "Mostrando todas as postagens" %>
     
     <div align="center">
-      <%= will_paginate @postagens, class: 'pagination' %>
+      <%= will_paginate @posts, class: 'pagination' %>
     </div>
-    <%= render 'postagem', obj: @postagens %>
+    <%= render 'post', obj: @posts %>
     <div align="center">
       <%= will_paginate %>
-    </div>
+  </div>
   </div>
 </div>

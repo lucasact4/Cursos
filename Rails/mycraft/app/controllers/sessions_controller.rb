@@ -5,18 +5,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    jogador = Jogador.find_by(email: params[:session][:email].downcase)
-    if jogador && jogador.authenticate(params[:session][:password])
-      session[:jogador_id] = jogador.id
+    player = Player.find_by(email: params[:session][:email].downcase)
+    if player && player.authenticate(params[:session][:password])
+      session[:player_id] = player.id
       flash[:success] = "Você fez login com sucesso!"
-      redirect_to jogadore_path(jogador)
+      redirect_to player
     else
       redirect_to login_path, flash: { danger: "Há algo de errado com as informações de login digitadas!" }
     end
   end
 
   def destroy
-    session[:jogador_id] = nil
+    session[:player_id] = nil
     flash[:success] = "Você deslogou!"
     redirect_to root_path
   end

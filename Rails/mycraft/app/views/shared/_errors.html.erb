@@ -6,8 +6,8 @@
           <h2 class="panel-title">
             <% entity_name = case obj1
                               when Item then 'item'
-                              when Jogador then 'jogador'
-                              when Postagem then 'postagem'
+                              when Player then 'jogador'
+                              when Post then 'postagem'
                               else obj1.class.to_s.downcase
                             end %>
             <% if obj3.to_i == 1 %>

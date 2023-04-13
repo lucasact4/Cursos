@@ -1,4 +1,4 @@
-class ItensController < ApplicationController
+class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :update, :show]
   before_action :set_error, only: [:new, :edit]
   before_action :require_admin, except: [:show, :index]
@@ -43,7 +43,7 @@ class ItensController < ApplicationController
   def destroy
     Item.find(params[:id]).destroy
     flash[:success] = "Item excluído com sucesso!"
-    redirect_to itens_path
+    redirect_to items_path
   end
 
   def show
@@ -51,7 +51,7 @@ class ItensController < ApplicationController
   end
 
   def index
-    @itens = Item.paginate(page: params[:page], per_page: 5)
+    @items = Item.paginate(page: params[:page], per_page: 5)
   end
 
   private
@@ -72,9 +72,10 @@ class ItensController < ApplicationController
   end
 
   def require_admin
-    if !logged_in? || (logged_in? and !current_jogador.admin?)
+    if !logged_in? || (logged_in? and !current_player.admin?)
       flash[:danger] = "Somente usuários administradores podem executar essa ação"
-      redirect_to itens_path
+      redirect_to items_path
     end
   end
+
 end
