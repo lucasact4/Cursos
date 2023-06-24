@@ -1,5 +1,6 @@
 #language: pt
 
+@primeiro
 Funcionalidade: Fazer uma soma.
 
 -Eu como usuario
