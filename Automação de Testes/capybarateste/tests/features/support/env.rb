@@ -1,5 +1,11 @@
-require 'capybara/cucumber'
+# require 'capybara/cucumber'
+require 'capybara'
+require 'capybara/dsl'
+require 'capybara/rspec/matchers'
 require 'selenium-webdriver'
+
+World(Capybara::DSL)
+World(Capybara::RSpecMatchers)
 
 Capybara.configure do |config|
   # Selenium
@@ -11,5 +17,3 @@ Capybara.configure do |config|
   config.default_max_wait_time = 5
 
 end
-
-World(Capybara::DSL)
