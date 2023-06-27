@@ -1,0 +1,8 @@
+---
+
+default: -p pretty -p homolog -p chrome -p html
+pretty: --format pretty
+homolog: AMBIENTE=homolog
+producao: AMBIENTE=producao
+chrome: BROWSER=chrome
+html: --format html --out=reports/relatorio.html
