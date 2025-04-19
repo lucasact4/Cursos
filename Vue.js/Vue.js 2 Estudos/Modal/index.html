@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+    <div id="root" class="container">
+        <button class="button is-primary mt-5" @click="showModal = true"> Mostrar Modal </button>
+        <modal v-show="showModal" @meuclickfechar="showModal = false">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ipsum est repellendus...
+        </modal>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+</body>
+</html>

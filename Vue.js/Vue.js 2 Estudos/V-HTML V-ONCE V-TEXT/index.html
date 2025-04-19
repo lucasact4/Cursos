@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+        {{ mensagem }}
+
+        <div v-once>{{ mensagem }}</div> <!-- O valor original não muda -->
+
+        <div v-html="conteudoEmHtml"></div>
+        <div v-text="conteudoEmHtml"></div>
+    
+        <div v-bind:id="dynamicId">Div dinamico</div>
+        <button v-bind:disabled="expressaoBooleana">Button</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                mensagem: "Oláaaaa!",
+                conteudoEmHtml: "<b>Olha o negrigo aqui<b>",
+                dynamicId: "divDinamico",
+                expressaoBooleana: true,
+            },
+            computed: {
+
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+</html>

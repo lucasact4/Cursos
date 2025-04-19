@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Class Binding</title>
+    <style type="text/css">
+        .color-red {
+            color: red;
+        }
+        .color-blue {
+            color: blue;
+        }
+        .is-loading {
+            background: red;
+        }
+        .back-green {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <button title="Título do Botão">Passe o mouse sobre o botão</button>
+        <button title="titulo">Passe o mouse sobre o botão</button>
+        <button v-bind:title="titulo">Passe o mouse sobre o botão</button>
+        <button :title="titulo">Passe o mouse sobre o botão</button>
+
+        <h1 :class=" whatColor ? className1 : className2" @click="toggleClass">Olá class binding</h1>
+
+        <h1 :class="{ 'is-loading': isLoading, 'color-blue': isBlue  }" @click="toggleClass">Olá class binding</h1>
+
+        <h1 :class="classObject">Olá class binding Object</h1>
+
+        <h1 :class="[className2, classBackgroundGreen]">Olá class binding com array</h1>
+
+        <h1 :style="{color: azul, fontSize: 20 + 'px'}">Olá style binding</h1>
+
+        <h1 :style="styleObject">Olá style styleObject</h1>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                titulo: "Agora o título modificado pelo javascript vue",
+                className1: 'color-red',
+                className2: 'color-blue',
+                classBackgroundGreen: 'back-green',
+                isLoading: true,
+                whatColor: true,
+                isBlue: true,
+                azul: 'blue',
+                styleObject: {
+                    color: 'green',
+                    fontSize: '13px'
+                }
+            },
+            computed: {
+                classObject: function() {
+                    return {
+                        'is-loading': true,
+                        'color-blue': this.isBlue
+                    }
+                }
+            },
+            methods: {
+                toggleClass() {
+                    this.isLoading = !this.isLoading;
+                    this.whatColor = !this.whatColor;
+                    this.isBlue = !this.isBlue
+                }
+            }
+        })
+    </script>
+</body>
+</html>
